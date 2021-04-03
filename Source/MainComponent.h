@@ -9,9 +9,8 @@
 #pragma once
 
 #include "../JuceLibraryCode/JuceHeader.h"
-#include "loadSaveXml.h" 
-#include "DisplayTable.h"
-#include "DisplayTable.cpp"
+#include "LoadSaveXml.h" 
+
 
 //==============================================================================
 /*
@@ -78,9 +77,7 @@ private:
     TextButton listXmlValues;
 
     
-    DisplayTable table;
-    // I need to add more overriders.
-    
+
 
 
     //==============================================================================

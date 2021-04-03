@@ -8,7 +8,7 @@
 
 #include "MainComponent.h"
 #include "LoadSaveXml.h" 
-#include "DisplayTable.h" 
+
 
 
 
@@ -16,7 +16,7 @@
 
 //==============================================================================
 MainComponent::MainComponent() : juce::AudioAppComponent(otherDeviceManager), state(Stopped), openButton("Open"), playButton("Play"), stopButton("Stop"), thirdButton("Current file path"),
-listXmlValues("Previous file paths1, Previous file paths2, Previous file paths3, Previous file paths4, Previous file paths5, Previous file paths6, Previous file paths7, Previous file paths8, Previous file paths9 "),table("s")
+listXmlValues("Previous file paths1, Previous file paths2, Previous file paths3, Previous file paths4, Previous file paths5, Previous file paths6, Previous file paths7, Previous file paths8, Previous file paths9 ")
 
 {
     otherDeviceManager.initialise(2, 2, nullptr, true);
@@ -40,13 +40,10 @@ listXmlValues("Previous file paths1, Previous file paths2, Previous file paths3,
 
     addAndMakeVisible(&thirdButton);
     addAndMakeVisible(&listXmlValues);
-    addAndMakeVisible(&table);
 
 
   
   
-
-//    addAndMakeVisible(t.table);
 
     // Begin fourth button logic.
 
@@ -226,7 +223,6 @@ void MainComponent::resized()
     thirdButton.setBounds(10, 130, getWidth() - 20, 30);
     listXmlValues.setBounds(10, 170, getWidth() - 20, 30);
     audioSettings->setBounds(10, 200, getWidth() - 20, 100);
-    table->setBounds(10, 200, getWidth() - 20, 100);
 
 }
 

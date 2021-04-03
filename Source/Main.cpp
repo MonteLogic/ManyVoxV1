@@ -10,7 +10,7 @@
 
 #include "../JuceLibraryCode/JuceHeader.h"
 #include "MainComponent.h"
-#include "loadSaveXml.h"
+#include "LoadSaveXml.h"
 
 //==============================================================================
 class simpleAudioPlayerApplication  : public JUCEApplication
