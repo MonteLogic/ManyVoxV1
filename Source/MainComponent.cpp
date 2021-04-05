@@ -8,15 +8,17 @@
 
 #include "MainComponent.h"
 #include "LoadSaveXml.h" 
+#include "BasicText.h" 
 
 
 
 
 
 
+// I think below is the function declarations and its already cogniscent of the classes that exist.
 //==============================================================================
 MainComponent::MainComponent() : juce::AudioAppComponent(otherDeviceManager), state(Stopped), openButton("Open"), playButton("Play"), stopButton("Stop"), thirdButton("Current file path"),
-listXmlValues("Previous file paths1, Previous file paths2, Previous file paths3, Previous file paths4, Previous file paths5, Previous file paths6, Previous file paths7, Previous file paths8, Previous file paths9 ")
+listXmlValues("Previous file paths1, Previous file paths2"), txt4()
 
 {
     otherDeviceManager.initialise(2, 2, nullptr, true);
@@ -42,10 +44,12 @@ listXmlValues("Previous file paths1, Previous file paths2, Previous file paths3,
     addAndMakeVisible(&listXmlValues);
 
 
-  
-  
-
-    // Begin fourth button logic.
+    // The below statement made a redundant declaration.
+    BasicText txt;
+    
+    std::cout << txt.bText;
+    
+   // Begin fourth button logic.
 
     LoadSaveXml xTwo;
     xTwo.loadData();
@@ -53,12 +57,13 @@ listXmlValues("Previous file paths1, Previous file paths2, Previous file paths3,
     // The logic of the different strings should
     // now be in this file. 
 
-    String newnew2 = xTwo.printNodeOne + "  " + xTwo.printNodeTwo;
+   
+//    listXmlValues.setButtonText("newnew1");
 
 
+    listXmlValues.setButtonText(txt.bText);
 
-    listXmlValues.setButtonText(newnew2);
-
+    
     // ===========================
 
 

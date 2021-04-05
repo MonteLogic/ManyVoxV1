@@ -10,6 +10,7 @@
 
 #include "../JuceLibraryCode/JuceHeader.h"
 #include "LoadSaveXml.h" 
+#include "BasicText.h" 
 
 
 //==============================================================================
@@ -75,6 +76,8 @@ private:
     TextButton thirdButton;
 
     TextButton listXmlValues;
+    
+    BasicText txt4;
 
     
 

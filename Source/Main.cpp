@@ -34,7 +34,9 @@ public:
         /// <param name="commandLine"></param>
         /// 
         
+        // I wonder if I even need the object declaration below.
         LoadSaveXml x;
+        
 
         mainWindow.reset (new MainWindow (getApplicationName()));
     }
