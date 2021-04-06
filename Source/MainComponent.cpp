@@ -7,7 +7,7 @@
 */
 
 #include "MainComponent.h"
-#include "LoadSaveXml.h" 
+//#include "LoadSaveXml.h" 
 #include "BasicText.h" 
 
 
@@ -51,8 +51,8 @@ listXmlValues("Previous file paths1, Previous file paths2"), txt4()
     
    // Begin fourth button logic.
 
-    LoadSaveXml xTwo;
-    xTwo.loadData();
+   // LoadSaveXml xTwo;
+    //xTwo.loadData();
 
     // The logic of the different strings should
     // now be in this file. 

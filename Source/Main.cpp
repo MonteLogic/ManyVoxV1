@@ -10,7 +10,7 @@
 
 #include "../JuceLibraryCode/JuceHeader.h"
 #include "MainComponent.h"
-#include "LoadSaveXml.h"
+//#include "LoadSaveXml.h"
 
 //==============================================================================
 class simpleAudioPlayerApplication  : public JUCEApplication
@@ -35,7 +35,7 @@ public:
         /// 
         
         // I wonder if I even need the object declaration below.
-        LoadSaveXml x;
+       // LoadSaveXml x;
         
 
         mainWindow.reset (new MainWindow (getApplicationName()));

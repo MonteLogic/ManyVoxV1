@@ -9,7 +9,7 @@
 #pragma once
 
 #include "../JuceLibraryCode/JuceHeader.h"
-#include "LoadSaveXml.h" 
+//#include "LoadSaveXml.h" 
 #include "BasicText.h" 
 
 

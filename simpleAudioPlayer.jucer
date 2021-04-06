@@ -10,7 +10,6 @@
       <FILE id="MMGNkU" name="BasicText.h" compile="0" resource="0" file="Source/BasicText.h"/>
       <FILE id="cgh9PV" name="BasicText.cpp" compile="1" resource="0" file="Source/BasicText.cpp"/>
       <FILE id="RFxZRb" name="Main.cpp" compile="1" resource="0" file="Source/Main.cpp"/>
-      <FILE id="YXRYxR" name="LoadSaveXml.h" compile="0" resource="0" file="Source/LoadSaveXml.h"/>
     </GROUP>
   </MAINGROUP>
   <EXPORTFORMATS>
