@@ -51,20 +51,15 @@ listXmlValues("Previous file paths1, Previous file paths2"), txt4()
     
    // Begin fourth button logic.
 
-    // This produces a duplicate statement in the console.
-    // LoadSaveXml x2;
-    //x2.loadData();
 
-    // The logic of the different strings should
-    // now be in this file. 
-
-   
-//    listXmlValues.setButtonText("newnew1");
+    std::cout << "This is coming from the MainComponent.cpp file and reading from LoadSaveXml" 
+              << x1.printNodeOne;
 
 
-    listXmlValues.setButtonText(txt.bText);
+//    listXmlValues.setButtonText(txt.bText);
 
-    
+      listXmlValues.setButtonText(x1.printNodeOne);
+  
     // ===========================
 
 
