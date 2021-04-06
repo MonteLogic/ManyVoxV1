@@ -38,23 +38,27 @@ void LoadSaveXml::loadData(){
 
         Logger::outputDebugString("Statement 5, This statement is inside the method loadData");
 
+  
         auto dir = juce::File::getCurrentWorkingDirectory();
 
-        dir = dir.getParentDirectory();
+        int numTries = 0;
 
-        auto dirTwo = dir.getParentDirectory();
-        // auto myxmlfile = dir.getChildFile("resources").getChildFile("filepaths.xml");
+        while (! dir.getChildFile ("Resources").exists() && numTries++ < 15)
+            dir = dir.getParentDirectory();
 
-        auto myxmlfile = dirTwo.getChildFile("Resources").getChildFile("FilePaths.xml");
+        auto myxmlfile = dir.getChildFile ("Resources").getChildFile ("FilePaths.xml");
+
+
+
+
+
+
+
 
         auto outputNameofFile = myxmlfile.getFullPathName();
 
         Logger::outputDebugString(outputNameofFile);
 
-
-
-        String changeTest = "9, Has not changed.";
-        
 
         if (myxmlfile.exists()) {
 
@@ -95,11 +99,6 @@ void LoadSaveXml::loadData(){
 
             }
 
-
-            if (xmlMadeThing->hasTagName("fooNonExistentTagName"))
-            {
-                Logger::outputDebugString("Statement ****");
-            }
         }
 
         if (!myxmlfile.exists()) {
