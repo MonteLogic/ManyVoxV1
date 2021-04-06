@@ -51,8 +51,9 @@ listXmlValues("Previous file paths1, Previous file paths2"), txt4()
     
    // Begin fourth button logic.
 
-   // LoadSaveXml xTwo;
-    //xTwo.loadData();
+    // This produces a duplicate statement in the console.
+    LoadSaveXml x2;
+    //x2.loadData();
 
     // The logic of the different strings should
     // now be in this file. 

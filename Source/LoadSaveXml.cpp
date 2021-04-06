@@ -20,6 +20,8 @@ LoadSaveXml::LoadSaveXml()
     printNodeOne = "This printed node one, in string format.";
     printNodeTwo = "Node two";
     printNodeThree = "Node three";
+
+    loadData();
     
 
 }
@@ -29,6 +31,9 @@ LoadSaveXml::~LoadSaveXml()
 }
 
 
-
+void LoadSaveXml::loadData(){
+  std::cout << "This is a big STATEMENT!!!"; 
+  Logger::outputDebugString("Statement 4, This statement is coming from LoadSaveXml.h , gracias");
+}
 
 
