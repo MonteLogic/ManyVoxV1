@@ -7,7 +7,7 @@
 */
 
 #include "MainComponent.h"
-//#include "LoadSaveXml.h" 
+#include "LoadSaveXml.h" 
 #include "BasicText.h" 
 
 
