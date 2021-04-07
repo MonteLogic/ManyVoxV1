@@ -18,7 +18,7 @@
 // I think below is the function declarations and its already cogniscent of the classes that exist.
 //==============================================================================
 MainComponent::MainComponent() : juce::AudioAppComponent(otherDeviceManager), state(Stopped), openButton("Open"), playButton("Play"), stopButton("Stop"), thirdButton("Current file path"),
-listXmlValues("Previous file paths1, Previous file paths2"), txt4()
+listXmlValues("Previous file paths1, Previous file paths2"), txt4(), credits("Developed by wp2mag.blogspot.com")
 
 {
     otherDeviceManager.initialise(2, 2, nullptr, true);
@@ -42,6 +42,7 @@ listXmlValues("Previous file paths1, Previous file paths2"), txt4()
 
     addAndMakeVisible(&thirdButton);
     addAndMakeVisible(&listXmlValues);
+    addAndMakeVisible(&credits);
 
 
     // The below statement made a redundant declaration.
@@ -223,7 +224,11 @@ void MainComponent::resized()
     stopButton.setBounds(10, 90, getWidth() - 20, 30);
     thirdButton.setBounds(10, 130, getWidth() - 20, 30);
     listXmlValues.setBounds(10, 170, getWidth() - 20, 30);
-    audioSettings->setBounds(10, 200, getWidth() - 20, 100);
+    credits.setBounds(10, 310, getWidth() - 20, 30);
+
+
+
+ //   audioSettings->setBounds(10, 200, getWidth() - 20, 100);
 
 }
 

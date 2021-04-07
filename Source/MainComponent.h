@@ -76,6 +76,8 @@ private:
     TextButton thirdButton;
 
     TextButton listXmlValues;
+
+    TextButton credits;
     
     BasicText txt4;
     
