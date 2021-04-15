@@ -8,9 +8,6 @@
 
 #include "MainComponent.h"
 #include "LoadSaveXml.h" 
-#include "BasicText.h" 
-
-
 
 
 
@@ -18,7 +15,7 @@
 // I think below is the function declarations and its already cogniscent of the classes that exist.
 //==============================================================================
 MainComponent::MainComponent() : juce::AudioAppComponent(otherDeviceManager), state(Stopped), openButton("Open"), playButton("Play"), stopButton("Stop"), thirdButton("Current file path"),
-listXmlValues("Previous file paths1, Previous file paths2"), txt4(), credits("Developed by wp2mag.blogspot.com")
+listXmlValues("Previous file paths1, Previous file paths2"), toggleBtn("Toggle Credit Button Visiblity"), credits("Developed by wp2mag.blogspot.com")
 
 {
     otherDeviceManager.initialise(2, 2, nullptr, true);
@@ -43,12 +40,24 @@ listXmlValues("Previous file paths1, Previous file paths2"), txt4(), credits("De
     addAndMakeVisible(&thirdButton);
     addAndMakeVisible(&listXmlValues);
     addAndMakeVisible(&credits);
+    addAndMakeVisible(&toggleBtn);
+
+
+    notVisibleFunc();
+
+    toggleBtn.onClick = [this] { toggleButtonClicked();  };
+
+
+    credits.onClick = [this] { toggleButtonOff (); };
+
+
 
 
     // The below statement made a redundant declaration.
-    BasicText txt;
-    
-    std::cout << txt.bText;
+    // Why is this being declared here?
+
+
+
     
    // Begin fourth button logic.
 
@@ -57,11 +66,9 @@ listXmlValues("Previous file paths1, Previous file paths2"), txt4(), credits("De
               << x1.printNodeOne;
 
 
-//    listXmlValues.setButtonText(txt.bText);
 
-      listXmlValues.setButtonText(x1.printNodeOne);
+    listXmlValues.setButtonText(x1.printNodeOne);
   
-    // ===========================
 
 
     
@@ -70,6 +77,7 @@ listXmlValues("Previous file paths1, Previous file paths2"), txt4(), credits("De
     
     setSize (400, 700);
 }
+
 
 MainComponent::~MainComponent()
 {
@@ -80,6 +88,31 @@ MainComponent::~MainComponent()
 void MainComponent::logToConsole()
 {
 }
+
+void MainComponent::notVisibleFunc()
+{
+// 
+    credits.setVisible(false); 
+
+}
+
+
+
+void MainComponent::toggleButtonClicked()
+{
+
+    credits.setVisible(true);
+}
+
+
+void MainComponent::toggleButtonOff()
+{
+
+    credits.setVisible(false);
+}
+
+
+
 
 //==============================================================================
 void MainComponent::prepareToPlay (int samplesPerBlockExpected, double sampleRate)
@@ -144,6 +177,11 @@ void MainComponent::stopButtonClicked()
 {
     transportStateChanged(Stopping);
 }
+
+// Right here I am going to toggle credits to make it not visible
+
+
+
 
 void MainComponent::transportStateChanged(TransportState newState)
 {
@@ -225,6 +263,8 @@ void MainComponent::resized()
     thirdButton.setBounds(10, 130, getWidth() - 20, 30);
     listXmlValues.setBounds(10, 170, getWidth() - 20, 30);
     credits.setBounds(10, 310, getWidth() - 20, 30);
+    toggleBtn.setBounds(10, 350, getWidth() - 20, 30);
+
 
 
 

@@ -10,7 +10,7 @@
 
 #include "../JuceLibraryCode/JuceHeader.h"
 #include "LoadSaveXml.h" 
-#include "BasicText.h" 
+
 
 
 //==============================================================================
@@ -58,6 +58,11 @@ private:
     void openButtonClicked();
     void logToConsole();
 
+    void notVisibleFunc();
+    void toggleButtonClicked();
+    void toggleButtonOff();
+
+
     
     void playButtonClicked();
     void stopButtonClicked();
@@ -79,9 +84,10 @@ private:
 
     TextButton credits;
     
-    BasicText txt4;
     
     LoadSaveXml x1;
+
+    TextButton toggleBtn;
 
     
 

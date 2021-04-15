@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <JUCERPROJECT id="zoErEt" name="simpleAudioPlayer" projectType="guiapp" displaySplashScreen="1"
-              jucerFormatVersion="1">
+              jucerFormatVersion="1" jucerVersion="5.4.7">
   <MAINGROUP id="gVx3r7" name="simpleAudioPlayer">
     <GROUP id="{E2A6EBF0-342D-5A41-5563-94F6064CB34B}" name="Source">
       <FILE id="JDo7zm" name="MainComponent.h" compile="0" resource="0" file="Source/MainComponent.h"/>
       <FILE id="xR97Wr" name="MainComponent.cpp" compile="1" resource="0"
             file="Source/MainComponent.cpp"/>
-      <FILE id="MMGNkU" name="BasicText.h" compile="0" resource="0" file="Source/BasicText.h"/>
-      <FILE id="cgh9PV" name="BasicText.cpp" compile="1" resource="0" file="Source/BasicText.cpp"/>
       <FILE id="RFxZRb" name="Main.cpp" compile="1" resource="0" file="Source/Main.cpp"/>
       <FILE id="dNL8wL" name="LoadSaveXml.h" compile="0" resource="0" file="Source/LoadSaveXml.h"/>
       <FILE id="QjBIa7" name="LoadSaveXml.cpp" compile="1" resource="0" file="Source/LoadSaveXml.cpp"/>

@@ -26,16 +26,7 @@ public:
     //==============================================================================
     void initialise (const String& commandLine) override
     {
-        // This method is where you should put your application's initialisation code..
-
-        /// <summary>
-        /// Let's look at you for starting code.
-        /// </summary>
-        /// <param name="commandLine"></param>
-        /// 
-        
-        // I wonder if I even need the object declaration below.
-       // LoadSaveXml x;
+  
         
 
         mainWindow.reset (new MainWindow (getApplicationName()));
