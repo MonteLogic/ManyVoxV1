@@ -1,6 +1,9 @@
 # ManyVoxV1
+Just add the TableBoxTutorial and have it be visible then,
 
-I'm currently trying to add the TableListBoxTutorial to be opened with a button click. 
+
+I'm adding the TableListBoxTutorial logic to be opened and closed based upon the Toggle View Click. 
+
 
 TableListBoxTutorial -> https://docs.juce.com/master/tutorial_table_list_box.html
 
