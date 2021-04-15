@@ -1,5 +1,10 @@
 # ManyVoxV1
 
+I'm currently trying to add the TableListBoxTutorial to be opened with a button click. 
+
+TableListBoxTutorial -> https://docs.juce.com/master/tutorial_table_list_box.html
+
+
 
 If you compiled this it would look like =>  https://imgur.com/a/yUPDsTs
 
