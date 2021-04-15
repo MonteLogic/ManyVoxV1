@@ -8,8 +8,8 @@ TableListBoxTutorial -> https://docs.juce.com/master/tutorial_table_list_box.htm
 Looking into this block of code for changing visibility of a window. 
 
 
-`
-{
+```
+
 class MainWindow : public Component
 {
 public:
@@ -44,9 +44,9 @@ private:
     Component::SafePointer<TopLevelWindow> window;
 };
 
-}
 
-`
+
+```
 
 
 If you compiled this it would look like =>  https://imgur.com/a/yUPDsTs
