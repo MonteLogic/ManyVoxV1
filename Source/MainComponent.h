@@ -10,6 +10,7 @@
 
 #include "../JuceLibraryCode/JuceHeader.h"
 #include "LoadSaveXml.h" 
+#include "Window2Component.h"
 
 
 
@@ -68,12 +69,14 @@ private:
     void stopButtonClicked();
     void transportStateChanged(TransportState newState);
     void changeListenerCallback (ChangeBroadcaster *source) override;
+
+    void openWindow2();
+    void openWindow3();
     
     AudioFormatManager formatManager;
     std::unique_ptr<AudioFormatReaderSource> playSource;
     AudioTransportSource transport;
     
-    // This is just display below
 
     TextButton openButton;
     TextButton playButton;
@@ -84,11 +87,19 @@ private:
 
     TextButton credits;
     
-    
     LoadSaveXml x1;
 
     TextButton toggleBtn;
 
+    // Start open "new" window logic.
+
+    TextButton openWindow2Button;
+    TextButton openWindow3Button;
+
+    std::unique_ptr<Window2> window2;
+    std::unique_ptr<Window3> window3;
+    
+    
     
 
 

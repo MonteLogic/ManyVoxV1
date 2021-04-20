@@ -8,6 +8,7 @@
 
 #include "MainComponent.h"
 #include "LoadSaveXml.h" 
+#include "Window2Component.h"
 
 
 
@@ -15,7 +16,7 @@
 // I think below is the function declarations and its already cogniscent of the classes that exist.
 //==============================================================================
 MainComponent::MainComponent() : juce::AudioAppComponent(otherDeviceManager), state(Stopped), openButton("Open"), playButton("Play"), stopButton("Stop"), thirdButton("Current file path"),
-listXmlValues("Previous file paths1, Previous file paths2"), toggleBtn("Toggle Credit Button Visiblity"), credits("Developed by wp2mag.blogspot.com")
+listXmlValues("Previous file paths1, Previous file paths2"), toggleBtn("Toggle Credit Button Visiblity"), credits("Developed by wp2mag.blogspot.com"), openWindow2Button("Open Window 2"), openWindow3Button("Open Window 3")
 
 {
     otherDeviceManager.initialise(2, 2, nullptr, true);
@@ -43,35 +44,25 @@ listXmlValues("Previous file paths1, Previous file paths2"), toggleBtn("Toggle C
     addAndMakeVisible(&toggleBtn);
 
 
+    addAndMakeVisible(openWindow2Button);
+    addAndMakeVisible(openWindow3Button);
+    openWindow2Button.onClick = [this] { openWindow2(); };
+    openWindow3Button.onClick = [this] { openWindow3(); };
+
+
     notVisibleFunc();
 
     toggleBtn.onClick = [this] { toggleButtonClicked();  };
 
-
     credits.onClick = [this] { toggleButtonOff (); };
-
-
-
-
-    // The below statement made a redundant declaration.
-    // Why is this being declared here?
-
-
-
     
-   // Begin fourth button logic.
-
 
     std::cout << "This is coming from the MainComponent.cpp file and reading from LoadSaveXml" 
               << x1.printNodeOne;
 
-
-
     listXmlValues.setButtonText(x1.printNodeOne);
   
 
-
-    
     formatManager.registerBasicFormats();
     transport.addChangeListener(this);
     
@@ -91,7 +82,7 @@ void MainComponent::logToConsole()
 
 void MainComponent::notVisibleFunc()
 {
-// 
+
     credits.setVisible(false); 
 
 }
@@ -255,6 +246,33 @@ void MainComponent::paint (Graphics& g)
     // You can add your drawing code here!
 }
 
+
+void MainComponent::openWindow2()
+{
+      if (window2 == nullptr){
+      window2.reset( new Window2 ("Window 2",
+                                 Desktop::getInstance().getDefaultLookAndFeel().findColour(ResizableWindow::backgroundColourId),
+                                 DocumentWindow::allButtons));
+      }
+      window2->setVisible (true);
+}
+
+
+
+
+ void MainComponent::openWindow3()
+    {
+        if (window3 == nullptr){
+            window3.reset( new Window3 ("Window 3",
+                                             Desktop::getInstance().getDefaultLookAndFeel().
+                                             findColour(ResizableWindow::backgroundColourId),
+                                             DocumentWindow::allButtons));
+        }
+        window3->setVisible (true);
+    }
+
+
+
 void MainComponent::resized()
 {
     openButton.setBounds(10, 10, getWidth() - 20, 30);
@@ -264,6 +282,10 @@ void MainComponent::resized()
     listXmlValues.setBounds(10, 170, getWidth() - 20, 30);
     credits.setBounds(10, 310, getWidth() - 20, 30);
     toggleBtn.setBounds(10, 350, getWidth() - 20, 30);
+
+
+    openWindow2Button.setBounds(10, 390, getWidth() - 20, 30);
+    openWindow3Button.setBounds(10, 430, getWidth() - 20, 30);
 
 
 

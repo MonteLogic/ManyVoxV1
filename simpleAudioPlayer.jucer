@@ -10,6 +10,10 @@
       <FILE id="RFxZRb" name="Main.cpp" compile="1" resource="0" file="Source/Main.cpp"/>
       <FILE id="dNL8wL" name="LoadSaveXml.h" compile="0" resource="0" file="Source/LoadSaveXml.h"/>
       <FILE id="QjBIa7" name="LoadSaveXml.cpp" compile="1" resource="0" file="Source/LoadSaveXml.cpp"/>
+      <FILE id="MKNc4u" name="Window2Component.cpp" compile="1" resource="0"
+            file="Source/Window2Component.cpp"/>
+      <FILE id="BgxmNA" name="Window2Component.h" compile="0" resource="0"
+            file="Source/Window2Component.h"/>
     </GROUP>
   </MAINGROUP>
   <EXPORTFORMATS>
