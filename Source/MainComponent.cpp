@@ -16,8 +16,8 @@
 // I think below is the function declarations and its already cogniscent of the classes that exist.
 //==============================================================================
 MainComponent::MainComponent() : juce::AudioAppComponent(otherDeviceManager), state(Stopped), openButton("Open"), playButton("Play"), stopButton("Stop"), thirdButton("Current file path"),
-listXmlValues("Previous file paths1, Previous file paths2"), toggleBtn("Toggle Credit Button Visiblity"), credits("Developed by wp2mag.blogspot.com"), openWindow2Button("Open Window 2"), 
-openWindow3Button("Open Window 3")
+listXmlValues("Previous file paths1, Previous file paths2"), toggleBtn("Toggle Credit Button Visiblity"), credits("Developed by wp2mag.blogspot.com"), openWindow2Button("Pre-Assessed"), 
+openWindow3Button("Post-Assessed")
 
 {
     otherDeviceManager.initialise(2, 2, nullptr, true);
