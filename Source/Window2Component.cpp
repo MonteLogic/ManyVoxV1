@@ -81,7 +81,7 @@ Window2::Window2(const String& name, Colour backgroundColour, int buttonsNeeded)
         setBounds (20, 20, 300, 400);
         setResizable (true, false);
         setUsingNativeTitleBar (true);
-        setContentOwned (&window2Component, false);
+       // setContentOwned (&window2Component, false);
         
     }
     
