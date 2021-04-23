@@ -11,7 +11,7 @@
 #include "../JuceLibraryCode/JuceHeader.h"
 #include "LoadSaveXml.h" 
 #include "Window2Component.h"
-
+#include "TableTutorialComponent.h"
 
 
 //==============================================================================

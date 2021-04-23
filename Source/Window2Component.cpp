@@ -8,18 +8,27 @@
   ==============================================================================
 */
 
+// "table" is listed fine but its not being listed anywhere as being used. 
+
+
 #include "Window2Component.h"
+#include "TableTutorialComponent.h"
+#include "MainComponent.h"
+
 
 // I gotta find out terms for the process of adding : and params to the 
 // left of these constructors.
+
+// Maybe I should be putting it in Window2 instead of Window2Component(?)
 Window2Component::Window2Component() : window2Button("Button in window 2")
     {
         // In your constructor, you should add any child components, and
         // initialise any special settings that your component needs.
         
-        setSize (getWidth(), getHeight());
+        setSize (1200, 600);
         addAndMakeVisible (window2Button);
-    }
+
+ }
     
 Window2Component::~Window2Component (){
 }
@@ -63,10 +72,12 @@ void Window2Component::resized()
 // This function is fully described in another function. 
 // I did not write it like a constructor before. 
 Window2::Window2(const String& name, Colour backgroundColour, int buttonsNeeded)
-    : DocumentWindow (name, backgroundColour, buttonsNeeded)
+    : DocumentWindow (name, backgroundColour, buttonsNeeded), table()
     {
      
-        
+     
+//        addAndMakeVisible(&table);   
+        setContentOwned(&table, true);
         setBounds (20, 20, 300, 400);
         setResizable (true, false);
         setUsingNativeTitleBar (true);

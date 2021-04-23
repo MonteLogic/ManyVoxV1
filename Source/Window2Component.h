@@ -7,7 +7,7 @@
 */
 //==============================================================================
 // Refactor this
-
+#include "TableTutorialComponent.h"
 
 class Window2Component    : public Component
 {
@@ -23,7 +23,9 @@ public:
 
 private:
     TextButton window2Button; 
+    
 
+    
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (Window2Component)
 };
 
@@ -41,6 +43,7 @@ public:
 private:
     // Below is declaring an  object. 
     Window2Component window2Component;
+    TableTutorialComponent table;
     
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (Window2)
 };
