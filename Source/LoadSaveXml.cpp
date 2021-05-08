@@ -49,12 +49,6 @@ void LoadSaveXml::loadData(){
         auto myxmlfile = dir.getChildFile ("Resources").getChildFile ("FilePaths.xml");
 
 
-
-
-
-
-
-
         auto outputNameofFile = myxmlfile.getFullPathName();
 
         Logger::outputDebugString(outputNameofFile);
@@ -108,6 +102,13 @@ void LoadSaveXml::loadData(){
 
         }
 
+
+
+}
+
+void LoadSaveXml::saveDuration(String timeInFull){
+
+    std::cout << "Time in full: " << timeInFull << std::endl;
 
 
 }

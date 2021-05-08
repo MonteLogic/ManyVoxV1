@@ -10,6 +10,7 @@
 #include "LoadSaveXml.h" 
 #include "Window2Component.h"
 #include "TableTutorialComponent.h"
+#include "LoadSaveXml.h"
 
 
 
@@ -161,7 +162,9 @@ void MainComponent::openButtonClicked()
       //  std::cout<< durationInMinutes <<std::endl;
 
          String printable = convertTimeToString(convertToInt, 15, "a", "b", "c");  
-
+         // I should have afunctioni here that takes those return values and writes them to xml files. 
+        
+        std::cout<< "Below is printable:" <<std::endl;
         std::cout<< printable <<std::endl;
 
        
@@ -212,8 +215,14 @@ String MainComponent::convertTimeToString(int convertToInt, int minutes, String 
         std::cout<< minutes <<std::endl;
         std::cout<< timeInFull <<std::endl;
 
+        LoadSaveXml saveInfo;
+
+        saveInfo.saveDuration(timeInFull);
+
         return timeInFull;
         
+
+
             
         }
 
