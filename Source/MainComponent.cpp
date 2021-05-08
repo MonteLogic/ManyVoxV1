@@ -145,9 +145,35 @@ void MainComponent::openButtonClicked()
      //   viewToView = 390;
 
 
-
+        // Seconds is right but I can't figure out quite how to turn it into accurate minutes
         //read the file
+// Why don't I just chop off the decimal part when it comes to seconds? Then use mod. 
+
         AudioFormatReader* reader = formatManager.createReaderFor(myFile);
+
+// I gotta wrap this in a function as well as send it off as xml data when the function 
+// has succesfully executed. 
+
+        auto durationInSeconds =  (float) reader->lengthInSamples / reader->sampleRate;
+
+        int convertToInt = durationInSeconds;
+
+        int seconds = convertToInt %60;
+        int minutes = convertToInt/60;
+
+        String timeInMinutes = std::__cxx11::to_string(minutes);
+        String timeInSeconds = std::__cxx11::to_string(seconds);
+        
+        String timeInFull = timeInMinutes + ":" + timeInSeconds;
+
+        std::cout<< durationInSeconds <<std::endl;
+        std::cout<< convertToInt <<std::endl;
+        std::cout<< seconds <<std::endl;
+        std::cout<< minutes <<std::endl;
+        std::cout<< timeInFull <<std::endl;
+        
+      //  std::cout<< durationInMinutes <<std::endl;
+
         
         if (reader != nullptr)
         {
