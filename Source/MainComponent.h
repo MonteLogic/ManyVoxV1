@@ -72,6 +72,8 @@ private:
     void transportStateChanged(TransportState newState);
     void changeListenerCallback (ChangeBroadcaster *source) override;
 
+    String convertTimeToString(int convertToInt, int minutes, String timeInMinutes, String timeInSeconds, String timeInFull);
+
     void openWindow2();
     void openWindow3();
     
