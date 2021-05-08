@@ -1,0 +1,21 @@
+<TABLE_DATA>
+    <HEADERS>
+        <COLUMN columnId="1" name="ID" width="50"/>
+        <COLUMN columnId="2" name="Module" width="200"/>
+        <COLUMN columnId="3" name="Name" width="200"/>
+        <COLUMN columnId="4" name="Duration" width="100"/>
+        <COLUMN columnId="5" name="License" width="100"/>
+        <COLUMN columnId="6" name="Groups" width="50"/>
+        <COLUMN columnId="7" name="Dependencies" width="50"/>
+        <COLUMN columnId="8" name="Description" width="300"/>
+        <COLUMN columnId="9" name="Select" width="50"/>
+    </HEADERS>
+    <DATA>
+        <ITEM ID="01" Module="juce_analytics" Name="JUCE analytics classes" Duration="5.2.0" License="GPL/Commercial" Groups="2" Dependencies="1" Description="Classes to collect analytics and send to destinations." Select="0"/>
+        <ITEM ID="02" Module="juce_audio_basics" Name="JUCE audio and MIDI data classes" Version="5.2.0" License="ISC" Groups="7" Dependencies="1" Description="Classes for audio buffer manipulation, midi message handling, synthesis, etc." Select="0"/>
+        <ITEM ID="03" Module="juce_audio_devices" Name="JUCE audio and MIDI I/O device classes" Version="5.2.0" License="ISC" Groups="3" Dependencies="2" Description="Classes to play and record from audio and MIDI I/O devices." Select="0"/>
+        <ITEM ID="04" Module="juce_audio_formats" Name="JUCE audio file format codecs" Version="5.2.0" License="GPL/Commercial" Groups="3" Dependencies="1" Description="Classes for reading and writing various audio file formats." Select="0"/>
+   
+   
+    </DATA>
+</TABLE_DATA>

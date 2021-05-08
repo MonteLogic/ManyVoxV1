@@ -63,6 +63,8 @@ private:
     void toggleButtonClicked();
     void toggleButtonOff();
 
+    int viewToView =  390;
+
 
     
     void playButtonClicked();

@@ -142,6 +142,8 @@ void MainComponent::openButtonClicked()
         thirdButton.setEnabled(false);
         thirdButton.setButtonText(ipsumString);
 
+     //   viewToView = 390;
+
 
 
         //read the file
@@ -285,13 +287,8 @@ void MainComponent::resized()
     toggleBtn.setBounds(10, 350, getWidth() - 20, 30);
 
 
-    openWindow2Button.setBounds(10, 390, getWidth() - 20, 30);
+    openWindow2Button.setBounds(10,viewToView, getWidth() - 20, 30);
     openWindow3Button.setBounds(10, 430, getWidth() - 20, 30);
-
-
-
-
- //   audioSettings->setBounds(10, 200, getWidth() - 20, 100);
 
 }
 

@@ -314,7 +314,7 @@ private:
         while (! dir.getChildFile ("Resources").exists() && numTries++ < 15)
             dir = dir.getParentDirectory();
 
-        auto tableFile = dir.getChildFile ("Resources").getChildFile ("TableData.xml");
+        auto tableFile = dir.getChildFile ("Resources").getChildFile ("AudioFileData.xml");
 
         if (tableFile.exists())
         {
