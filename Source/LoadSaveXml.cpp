@@ -17,7 +17,7 @@ LoadSaveXml::LoadSaveXml()
     // In your constructor, you should add any child components, and
     // initialise any special settings that your component needs.
     
-    printNodeOne = "This printed node one, in string format.";
+    printNodeOne = "Printed node one, this statement was not replaced.";
     printNodeTwo = "Node two";
     printNodeThree = "Node three";
 
@@ -80,22 +80,45 @@ void LoadSaveXml::loadData(){
                 auto* nodeOne = xmlMadeThing->getFirstChildElement();
 
                 printNodeOne = nodeOne->getAllSubText();
+              Logger::outputDebugString(printNodeOne);
 
-                Logger::outputDebugString(printNodeOne);
 
+               auto nodeTwo = nodeOne->getNextElement();
 
-                auto nodeTwo = nodeOne->getNextElement();
+               printNodeTwo = nodeTwo->getAllSubText();
 
-                printNodeTwo = nodeTwo->getAllSubText();
-
-                Logger::outputDebugString(printNodeTwo);
+               Logger::outputDebugString(printNodeTwo);
 
                 //
-                auto nodeThree = nodeTwo->getNextElement();
+              auto nodeThree = nodeTwo->getNextElement();
 
-                printNodeThree = nodeThree->getAllSubText();
+              printNodeThree = nodeThree->getAllSubText();
 
-                Logger::outputDebugString(printNodeThree);
+              Logger::outputDebugString(printNodeThree);
+
+
+              XmlElement animalsList ("ANIMALS");
+
+              // create an inner element…
+              XmlElement* giraffe = new XmlElement ("GIRAFFE");
+              giraffe->setAttribute ("name", "jue");
+              giraffe->setAttribute ("age", 10);
+              giraffe->setAttribute ("friendly", false);
+              // …and add our new element to the parent node
+              animalsList.addChildElement (giraffe);
+
+
+              animalsList.writeTo(myxmlfile, XmlElement::TextFormat());
+
+
+              
+
+
+
+
+
+
+
 
             }
 
