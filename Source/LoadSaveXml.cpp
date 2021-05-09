@@ -91,6 +91,21 @@ void LoadSaveXml::loadData(){
 
                 Logger::outputDebugString(printNodeThree);
 
+// I guess it needs to itereate (?) 
+  //             nodeThree->setText("string" );
+
+               // The if retruned false. 
+//               auto printAgain = nodeThree->getText();
+
+               auto findNext = nodeThree->getAttributeValue(0);
+
+               std::cout << findNext << std::endl;
+
+
+
+
+
+
             }
 
         }
@@ -109,6 +124,14 @@ void LoadSaveXml::loadData(){
 void LoadSaveXml::saveDuration(String timeInFull){
 
     std::cout << "Time in full: " << timeInFull << std::endl;
+
+
+
+ //   XmlElement::setText (timeInFull, nodeOne);
+
+
+    // Write the above info to a xml file. 
+
 
 
 }

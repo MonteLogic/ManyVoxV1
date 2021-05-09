@@ -24,6 +24,8 @@ public:
     void loadData();
     void saveDuration(String timeInFull);
 
+    void setText();
+
     
 
 
