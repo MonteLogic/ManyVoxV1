@@ -49,6 +49,12 @@ void LoadSaveXml::loadData(){
         auto myxmlfile = dir.getChildFile ("Resources").getChildFile ("FilePaths.xml");
 
 
+
+
+
+
+
+
         auto outputNameofFile = myxmlfile.getFullPathName();
 
         Logger::outputDebugString(outputNameofFile);
@@ -89,24 +95,7 @@ void LoadSaveXml::loadData(){
 
                 printNodeThree = nodeThree->getAllSubText();
 
-                auto nodeFour = nodeThree->getNextElement();
-
                 Logger::outputDebugString(printNodeThree);
-
-// I guess it needs to itereate (?) 
-  //             nodeThree->setText("string" );
-
-               // The if retruned false. 
-//               auto printAgain = nodeThree->getText();
-
-               auto findNext = nodeFour->getAttributeValue(1);
-
-               std::cout << findNext << std::endl;
-
-
-
-
-
 
             }
 
@@ -118,21 +107,6 @@ void LoadSaveXml::loadData(){
             Logger::outputDebugString("Non-Existent");
 
         }
-
-
-
-}
-
-void LoadSaveXml::saveDuration(String timeInFull){
-
-    std::cout << "Time in full: " << timeInFull << std::endl;
-
-
-
- //   XmlElement::setText (timeInFull, nodeOne);
-
-
-    // Write the above info to a xml file. 
 
 
 

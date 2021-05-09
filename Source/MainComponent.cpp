@@ -10,7 +10,6 @@
 #include "LoadSaveXml.h" 
 #include "Window2Component.h"
 #include "TableTutorialComponent.h"
-#include "LoadSaveXml.h"
 
 
 
@@ -133,7 +132,8 @@ void MainComponent::openButtonClicked()
         //what did the user choose?
         myFile = chooser.getResult();
         // This is ^^ where the file is chosen. 
- 
+        Logger::outputDebugString("Statement three");
+
         // String ipsumString = myFile.getFileExtension();
         String ipsumString = myFile.getFullPathName();
 
@@ -142,6 +142,12 @@ void MainComponent::openButtonClicked()
         thirdButton.setEnabled(false);
         thirdButton.setButtonText(ipsumString);
 
+     //   viewToView = 390;
+
+
+        // Seconds is right but I can't figure out quite how to turn it into accurate minutes
+        //read the file
+// Why don't I just chop off the decimal part when it comes to seconds? Then use mod. 
 
         AudioFormatReader* reader = formatManager.createReaderFor(myFile);
 
@@ -152,25 +158,23 @@ void MainComponent::openButtonClicked()
 
         int convertToInt = durationInSeconds;
 
+        int seconds = convertToInt %60;
+        int minutes = convertToInt/60;
 
-// Why do I need 6 parameters?
+        String timeInMinutes = std::__cxx11::to_string(minutes);
+        String timeInSeconds = std::__cxx11::to_string(seconds);
+        
+        String timeInFull = timeInMinutes + ":" + timeInSeconds;
 
-
-
-        String timeInFull;
+        std::cout<< durationInSeconds <<std::endl;
+        std::cout<< convertToInt <<std::endl;
+        std::cout<< seconds <<std::endl;
+        std::cout<< minutes <<std::endl;
+        std::cout<< timeInFull <<std::endl;
         
       //  std::cout<< durationInMinutes <<std::endl;
 
-         String printable = convertTimeToString(convertToInt, 15, "a", "b", "c");  
-         // I should have afunctioni here that takes those return values and writes them to xml files. 
         
-        std::cout<< "Below is printable:" <<std::endl;
-        std::cout<< printable <<std::endl;
-
-       
-
-
-
         if (reader != nullptr)
         {
             //get the file ready to play
@@ -195,38 +199,6 @@ void MainComponent::stopButtonClicked()
 }
 
 // Right here I am going to toggle credits to make it not visible
-
-
-String MainComponent::convertTimeToString(int convertToInt, int minutes, String timeInMinutes, String timeInSeconds, String timeInFull){
-    
-        int durationDuration = convertToInt;
-
-        int seconds = convertToInt %60;
-        minutes = convertToInt/60;
-
-        timeInMinutes = std::__cxx11::to_string(minutes);
-        timeInSeconds = std::__cxx11::to_string(seconds);
-        
-        timeInFull = timeInMinutes + ":" + timeInSeconds;
-
-        std::cout<< durationDuration <<std::endl;
-        std::cout<< convertToInt <<std::endl;
-        std::cout<< seconds <<std::endl;
-        std::cout<< minutes <<std::endl;
-        std::cout<< timeInFull <<std::endl;
-
-        LoadSaveXml saveInfo;
-
-        saveInfo.saveDuration(timeInFull);
-
-        return timeInFull;
-        
-
-
-            
-        }
-
-
 
 
 
