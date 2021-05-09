@@ -89,6 +89,8 @@ void LoadSaveXml::loadData(){
 
                 printNodeThree = nodeThree->getAllSubText();
 
+                auto nodeFour = nodeThree->getNextElement();
+
                 Logger::outputDebugString(printNodeThree);
 
 // I guess it needs to itereate (?) 
@@ -97,7 +99,7 @@ void LoadSaveXml::loadData(){
                // The if retruned false. 
 //               auto printAgain = nodeThree->getText();
 
-               auto findNext = nodeThree->getAttributeValue(0);
+               auto findNext = nodeFour->getAttributeValue(1);
 
                std::cout << findNext << std::endl;
 
