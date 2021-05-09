@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<ANIMALS>
-  <GIRAFFE name="jue" age="10" friendly="0"/>
-</ANIMALS>
+<PATHS>
+  <PATH ID="PATH1">C:\Users\dc\Desktop\AudioFileOne.mp3</PATH>
+  <PATH ID="PATH2">C:\Users\dc\Desktop\AudioFileTwo.mp3</PATH>
+  <PATH ID="changed">C:\Users\dc\Desktop\AudioFileThree.mp3</PATH>
+  <PATH ID="PATH4" CONTENT="C:\Users\dc\Desktop\AudioFileContent.mp3">C:\Users\dc\Desktop\AudioFileTwo.mp3</PATH>
+</PATHS>

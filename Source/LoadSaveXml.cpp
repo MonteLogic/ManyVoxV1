@@ -96,24 +96,12 @@ void LoadSaveXml::loadData(){
 
               Logger::outputDebugString(printNodeThree);
 
-
-              XmlElement animalsList ("ANIMALS");
-
-              // create an inner element…
-              XmlElement* giraffe = new XmlElement ("GIRAFFE");
-              giraffe->setAttribute ("name", "jue");
-              giraffe->setAttribute ("age", 10);
-              giraffe->setAttribute ("friendly", false);
-              // …and add our new element to the parent node
-              animalsList.addChildElement (giraffe);
+  //            XmlElement writeNodeThree ("PATHS");
 
 
-              animalsList.writeTo(myxmlfile, XmlElement::TextFormat());
 
-
-              
-
-
+              nodeThree->setAttribute ("ID", "changed");
+              xmlMadeThing->writeTo(myxmlfile, XmlElement::TextFormat());
 
 
 
