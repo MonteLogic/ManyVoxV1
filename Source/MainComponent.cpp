@@ -166,11 +166,16 @@ void MainComponent::openButtonClicked()
         
         String timeInFull = timeInMinutes + ":" + timeInSeconds;
 
-        std::cout<< durationInSeconds <<std::endl;
-        std::cout<< convertToInt <<std::endl;
-        std::cout<< seconds <<std::endl;
-        std::cout<< minutes <<std::endl;
+        // std::cout<< durationInSeconds <<std::endl;
+        // std::cout<< convertToInt <<std::endl;
+        // std::cout<< seconds <<std::endl;
+        // std::cout<< minutes <<std::endl;
         std::cout<< timeInFull <<std::endl;
+
+        LoadSaveXml saveInfo;
+
+        saveInfo.saveDuration(timeInFull);
+
         
       //  std::cout<< durationInMinutes <<std::endl;
 

@@ -89,7 +89,7 @@ void LoadSaveXml::loadData(){
 
                Logger::outputDebugString(printNodeTwo);
 
-                //
+
               auto nodeThree = nodeTwo->getNextElement();
 
               printNodeThree = nodeThree->getAllSubText();
@@ -119,6 +119,14 @@ void LoadSaveXml::loadData(){
 
         }
 
+
+
+}
+
+
+void LoadSaveXml::saveDuration(String timeInFull){
+
+    std::cout << "Time in full: " << timeInFull << std::endl;
 
 
 }

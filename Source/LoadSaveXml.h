@@ -22,6 +22,7 @@ public:
     ~LoadSaveXml() override;
 
     void loadData();
+    void saveDuration(String timeInFull);
 
     
 
