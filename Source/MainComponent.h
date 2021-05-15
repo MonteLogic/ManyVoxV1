@@ -89,7 +89,7 @@ private:
 
     TextButton credits;
     
-    LoadSaveXml x1;
+   LoadSaveXml x1;
 
     TextButton toggleBtn;
 

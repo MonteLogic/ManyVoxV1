@@ -1,10 +1,8 @@
 /*
   ==============================================================================
-
     LoadSaveXml.h
     Created: 6 Apr 2021 2:56:45pm
     Author:  deckard
-
   ==============================================================================
 */
 
@@ -21,10 +19,15 @@ public:
     LoadSaveXml();
     ~LoadSaveXml() override;
 
+    String newString = "YeahYeah";
+
+    //void saveData();
     void loadData();
     void saveDuration(String timeInFull);
 
-    
+
+
+    std::unique_ptr<juce::XmlElement> xmlMadeThing;
 
 
     String printNodeOne;

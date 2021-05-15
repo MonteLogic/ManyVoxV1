@@ -1,10 +1,8 @@
 /*
   ==============================================================================
-
     LoadSaveXml.cpp
     Created: 6 Apr 2021 2:56:45pm
     Author:  deckard
-
   ==============================================================================
 */
 
@@ -22,6 +20,10 @@ LoadSaveXml::LoadSaveXml()
     printNodeThree = "Node three";
 
     loadData();
+    // I think saveData hits before loadData.
+    //saveData();
+
+
     
 
 }
@@ -32,11 +34,8 @@ LoadSaveXml::~LoadSaveXml()
 
 
 void LoadSaveXml::loadData(){
-  std::cout << "This is a big STATEMENT!!!"; 
-  Logger::outputDebugString("Statement 4, This statement is coming from LoadSaveXml.h , gracias");
+  // A preamble to queue all files. 
 
-
-        Logger::outputDebugString("Statement 5, This statement is inside the method loadData");
 
   
         auto dir = juce::File::getCurrentWorkingDirectory();
@@ -52,23 +51,23 @@ void LoadSaveXml::loadData(){
 
 
 
-
-
-
         auto outputNameofFile = myxmlfile.getFullPathName();
 
-        Logger::outputDebugString(outputNameofFile);
-
+      
 
         if (myxmlfile.exists()) {
 
             Logger::outputDebugString(outputNameofFile);
             Logger::outputDebugString("Existent");
 
-            auto xmlMadeThing = juce::XmlDocument::parse(myxmlfile);
             
 
 
+            xmlMadeThing = juce::XmlDocument::parse(myxmlfile);
+
+
+
+     
             if (xmlMadeThing->hasTagName("PATHS"))
             {
                 // Checking to see if the file exist and is reading the tags.
@@ -100,7 +99,7 @@ void LoadSaveXml::loadData(){
 
 
 
-              nodeThree->setAttribute ("ID", "changed");
+              nodeThree->setAttribute ("ID", "changed1");
               xmlMadeThing->writeTo(myxmlfile, XmlElement::TextFormat());
 
 
@@ -120,13 +119,37 @@ void LoadSaveXml::loadData(){
         }
 
 
-
 }
 
 
+
+// This works
 void LoadSaveXml::saveDuration(String timeInFull){
 
     std::cout << "Time in full: " << timeInFull << std::endl;
 
 
 }
+
+
+
+
+// void LoadSaveXml::saveData(){
+
+
+
+
+  
+  
+//       xmlMadeThing = juce::XmlDocument::parse(myxmlfile);
+
+      
+//       auto* nodeThinger = xmlMadeThing->getFirstChildElement();
+
+//       auto printNodeThinger= nodeThinger->getAllSubText();
+
+//      std::cout << "print: " << printNodeThinger << std::endl;
+//       std::cout << "print: " << 5 << std::endl;
+
+
+// }
