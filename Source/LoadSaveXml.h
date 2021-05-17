@@ -19,23 +19,47 @@ public:
     LoadSaveXml();
     ~LoadSaveXml() override;
 
-    String newString = "YeahYeah";
+ 
+
+
+private:
+
+   String newString = "YeahYeah";
 
     //void saveData();
     void loadData();
     void saveDuration(String timeInFull);
 
+    void writeData();
+
+    // FILE * myxmlfile;
+    // FILE * dir;
+
+    juce::File myxmlfile;
+    juce::File dir;
 
 
-    std::unique_ptr<juce::XmlElement> xmlMadeThing;
+      // getFirstChildElement
+       juce::XmlElement* nodeOne = nullptr;
+       juce::XmlElement* nodeTwo = nullptr;
+       juce::XmlElement* nodeThree = nullptr;
+       juce::XmlElement* nodeFour = nullptr;
+
+
+    
+    std::shared_ptr<juce::XmlElement> xmlMadeThing;
 
 
     String printNodeOne;
     String printNodeTwo;
-    String printNodeThree;
+    String printNodeThree; // I think printNodeThree maybe destroyed once the scope ends. 
+    String printNodeFour; 
+
+    String newTimeInFull;
 
 
 
-private:
+
+
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (LoadSaveXml)
 };

@@ -7,9 +7,8 @@
 */
 
 #include "MainComponent.h"
-#include "LoadSaveXml.h" 
 #include "Window2Component.h"
-#include "TableTutorialComponent.h"
+
 
 
 
@@ -58,10 +57,10 @@ openWindow3Button("Post-Assessed")
     credits.onClick = [this] { toggleButtonOff (); };
     
 
-    std::cout << "This is coming from the MainComponent.cpp file and reading from LoadSaveXml" 
-              << x1.printNodeOne;
+    // std::cout << "This is coming from the MainComponent.cpp file and reading from LoadSaveXml" 
+    //           << x1.printNodeOne;
 
-    listXmlValues.setButtonText(x1.printNodeOne);
+    // listXmlValues.setButtonText(x1.printNodeOne);
   
 
     formatManager.registerBasicFormats();
@@ -172,9 +171,9 @@ void MainComponent::openButtonClicked()
         // std::cout<< minutes <<std::endl;
         std::cout<< timeInFull <<std::endl;
 
-        LoadSaveXml saveInfo;
+        // LoadSaveXml saveInfo;
 
-        saveInfo.saveDuration(timeInFull);
+        // saveInfo.saveDuration(timeInFull);
 
         
       //  std::cout<< durationInMinutes <<std::endl;

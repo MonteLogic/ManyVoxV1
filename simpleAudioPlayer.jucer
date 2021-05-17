@@ -18,6 +18,8 @@
             file="Source/TableTutorialComponent.cpp"/>
       <FILE id="zVCWkZ" name="TableTutorialComponent.h" compile="0" resource="0"
             file="Source/TableTutorialComponent.h"/>
+      <FILE id="qydq8n" name="WriteToXml.cpp" compile="1" resource="0" file="Source/WriteToXml.cpp"/>
+      <FILE id="zpRrug" name="WriteToXml.h" compile="0" resource="0" file="Source/WriteToXml.h"/>
     </GROUP>
   </MAINGROUP>
   <EXPORTFORMATS>

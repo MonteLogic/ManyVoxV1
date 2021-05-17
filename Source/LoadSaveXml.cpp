@@ -8,20 +8,19 @@
 
 #include <JuceHeader.h>
 #include "LoadSaveXml.h"
+#include "MainComponent.h"
+
 
 //==============================================================================
 LoadSaveXml::LoadSaveXml()
 {
-    // In your constructor, you should add any child components, and
-    // initialise any special settings that your component needs.
-    
+
+    loadData();
+
+
     printNodeOne = "Printed node one, this statement was not replaced.";
     printNodeTwo = "Node two";
     printNodeThree = "Node three";
-
-    loadData();
-    // I think saveData hits before loadData.
-    //saveData();
 
 
     
@@ -33,39 +32,44 @@ LoadSaveXml::~LoadSaveXml()
 }
 
 
+// void LoadSaveXml::saveDuration(String timeInFull){
+
+//     std::cout << "Time in full: " << timeInFull << std::endl;
+
+//     newTimeInFull = timeInFull;
+
+
+//     writeData();
+    
+  
+
+// }
+
+
+
+
 void LoadSaveXml::loadData(){
   // A preamble to queue all files. 
 
-
   
-        auto dir = juce::File::getCurrentWorkingDirectory();
+        dir = juce::File::getCurrentWorkingDirectory();
 
         int numTries = 0;
 
         while (! dir.getChildFile ("Resources").exists() && numTries++ < 15)
             dir = dir.getParentDirectory();
 
-        auto myxmlfile = dir.getChildFile ("Resources").getChildFile ("FilePaths.xml");
-
-
-
-
+        myxmlfile = dir.getChildFile ("Resources").getChildFile ("FilePaths.xml");
 
         auto outputNameofFile = myxmlfile.getFullPathName();
 
-      
 
         if (myxmlfile.exists()) {
 
             Logger::outputDebugString(outputNameofFile);
             Logger::outputDebugString("Existent");
-
-            
-
-
+  
             xmlMadeThing = juce::XmlDocument::parse(myxmlfile);
-
-
 
      
             if (xmlMadeThing->hasTagName("PATHS"))
@@ -76,34 +80,33 @@ void LoadSaveXml::loadData(){
 
                 // Reading the xml string. 
 
-                auto* nodeOne = xmlMadeThing->getFirstChildElement();
+                nodeOne = xmlMadeThing->getFirstChildElement();
+            std::cout << "nodeOne first reference: " << nodeOne << std::endl;
 
                 printNodeOne = nodeOne->getAllSubText();
               Logger::outputDebugString(printNodeOne);
 
 
-               auto nodeTwo = nodeOne->getNextElement();
+              nodeTwo = nodeOne->getNextElement();
 
                printNodeTwo = nodeTwo->getAllSubText();
 
                Logger::outputDebugString(printNodeTwo);
 
 
-              auto nodeThree = nodeTwo->getNextElement();
+              nodeThree = nodeTwo->getNextElement();
 
               printNodeThree = nodeThree->getAllSubText();
 
-              Logger::outputDebugString(printNodeThree);
+          
+              std::cout << printNodeThree << std::endl;
+              
+              std::cout << newTimeInFull << std::endl;
+          //    writeData();
 
-  //            XmlElement writeNodeThree ("PATHS");
 
-
-
-              nodeThree->setAttribute ("ID", "changed1");
+              nodeThree->setAttribute ("ID", "Changed3");
               xmlMadeThing->writeTo(myxmlfile, XmlElement::TextFormat());
-
-
-
 
 
 
@@ -122,34 +125,25 @@ void LoadSaveXml::loadData(){
 }
 
 
+void LoadSaveXml::writeData(){
 
-// This works
-void LoadSaveXml::saveDuration(String timeInFull){
+          nodeOne->setAttribute ("ID", "This is changed from writeData()");
+          xmlMadeThing->writeTo(myxmlfile, XmlElement::TextFormat());
+        
 
-    std::cout << "Time in full: " << timeInFull << std::endl;
+        //   if (newTimeInFull.isEmpty() )    {
 
+        //     std::cout << "New timeInFull isEmpty" << std::endl;
+                      
+
+        // }
+        // if (newTimeInFull.isNotEmpty() )    {
+
+        //      std::cout << "New timeInFull isNotEmpty" << std::endl;
+        //   // The below lines uncommented produce a segmentation fault. 
+        //    nodeOne->setAttribute ("ID", newTimeInFull);
+        //   xmlMadeThing->writeTo(myxmlfile, XmlElement::TextFormat());
+        // }
+ 
 
 }
-
-
-
-
-// void LoadSaveXml::saveData(){
-
-
-
-
-  
-  
-//       xmlMadeThing = juce::XmlDocument::parse(myxmlfile);
-
-      
-//       auto* nodeThinger = xmlMadeThing->getFirstChildElement();
-
-//       auto printNodeThinger= nodeThinger->getAllSubText();
-
-//      std::cout << "print: " << printNodeThinger << std::endl;
-//       std::cout << "print: " << 5 << std::endl;
-
-
-// }

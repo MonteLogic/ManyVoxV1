@@ -1,14 +1,3 @@
-I gotta figure out how to make TableListBoxTutorial dispaly in a opened window. 
+There saying that its getting cleaned up by other parts of the file. 
 
-
-It would be cool if the first window showed, the previous unsorted stem vox and the second showed the sorted stem vox. 
-
-I am just going to rank the entire average first and then worry about parceling out each part. 
-
-
-I'm struggling with async proccesses and I have no idea why that 
-window was so adimantly against not having a button that directly matched
-it and having that button be on screen. 
-
-I'm going to implement the AudioFormatReader and then record that metadata into the .xml file. 
-
+So I'm going to create a new file where I only write. 
