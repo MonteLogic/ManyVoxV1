@@ -16,6 +16,7 @@ LoadSaveXml::LoadSaveXml()
 {
 
     loadData();
+    writeData();
 
 
     printNodeOne = "Printed node one, this statement was not replaced.";
@@ -105,7 +106,7 @@ void LoadSaveXml::loadData(){
           //    writeData();
 
 
-              nodeThree->setAttribute ("ID", "Changed3");
+              nodeThree->setAttribute ("ID", "Changed5");
               xmlMadeThing->writeTo(myxmlfile, XmlElement::TextFormat());
 
 
@@ -127,7 +128,7 @@ void LoadSaveXml::loadData(){
 
 void LoadSaveXml::writeData(){
 
-          nodeOne->setAttribute ("ID", "This is changed from writeData()");
+          nodeOne->setAttribute ("ID", "This is changed from writeData(),");
           xmlMadeThing->writeTo(myxmlfile, XmlElement::TextFormat());
         
 
