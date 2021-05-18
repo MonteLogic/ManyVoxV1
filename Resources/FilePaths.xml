@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <PATHS>
-  <PATH ID="This is changed from writeData(),">C:\Users\dc\Desktop\AudioFileOne.mp3</PATH>
+  <PATH ID="This is changed from writeData(),6">C:\Users\dc\Desktop\AudioFileOne.mp3</PATH>
   <PATH ID="PATH2">C:\Users\dc\Desktop\AudioFileTwo.mp3</PATH>
-  <PATH ID="Changed5">C:\Users\dc\Desktop\AudioFileThree.mp3</PATH>
+  <PATH ID="Changed6">C:\Users\dc\Desktop\AudioFileThree.mp3</PATH>
   <PATH ID="PATH4" CONTENT="C:\Users\dc\Desktop\AudioFileContent.mp3">C:\Users\dc\Desktop\AudioFileTwo.mp3</PATH>
 </PATHS>

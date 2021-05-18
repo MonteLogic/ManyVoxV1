@@ -15,16 +15,19 @@
 LoadSaveXml::LoadSaveXml()
 {
 
+
+// I'm trying to run logic that makes it so that loadData doesn't run twice
+// thus changing the memory address values(?)
     loadData();
-    writeData();
-
-
-    printNodeOne = "Printed node one, this statement was not replaced.";
-    printNodeTwo = "Node two";
-    printNodeThree = "Node three";
-
 
     
+    if (nodeOne != 0){
+   writeData();
+
+    }
+    
+
+  
 
 }
 
@@ -106,7 +109,7 @@ void LoadSaveXml::loadData(){
           //    writeData();
 
 
-              nodeThree->setAttribute ("ID", "Changed5");
+              nodeThree->setAttribute ("ID", "Changed6");
               xmlMadeThing->writeTo(myxmlfile, XmlElement::TextFormat());
 
 
@@ -128,7 +131,7 @@ void LoadSaveXml::loadData(){
 
 void LoadSaveXml::writeData(){
 
-          nodeOne->setAttribute ("ID", "This is changed from writeData(),");
+          nodeOne->setAttribute ("ID", "This is changed from writeData(),6");
           xmlMadeThing->writeTo(myxmlfile, XmlElement::TextFormat());
         
 

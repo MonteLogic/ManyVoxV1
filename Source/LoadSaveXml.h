@@ -19,6 +19,7 @@ public:
     LoadSaveXml();
     ~LoadSaveXml() override;
 
+    String printNodeOne;
  
 
 
@@ -50,7 +51,6 @@ private:
     std::shared_ptr<juce::XmlElement> xmlMadeThing;
 
 
-    String printNodeOne;
     String printNodeTwo;
     String printNodeThree; // I think printNodeThree maybe destroyed once the scope ends. 
     String printNodeFour; 
