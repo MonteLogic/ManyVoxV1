@@ -1,3 +1,6 @@
+- loadData is being fired twice! And I need to find the logic and understand it and show how it works, possibly with output statements. 
+
+
 # ManyVoxV1
 
 I'm adding this functionality to this app which is:  https://gist.github.com/dchavours/2ea06638c3a3084f4a625f92c5ad74c4
