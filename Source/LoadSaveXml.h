@@ -20,7 +20,9 @@ public:
     ~LoadSaveXml() override;
 
     String printNodeOne;
- 
+
+    void saveDuration(String timeInFull);
+
 
 
 private:
@@ -29,7 +31,6 @@ private:
 
     //void saveData();
     void loadData();
-    void saveDuration(String timeInFull);
 
     void writeData();
 

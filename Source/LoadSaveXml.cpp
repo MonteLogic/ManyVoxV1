@@ -36,18 +36,18 @@ LoadSaveXml::~LoadSaveXml()
 }
 
 
-// void LoadSaveXml::saveDuration(String timeInFull){
+void LoadSaveXml::saveDuration(String timeInFull){
 
-//     std::cout << "Time in full: " << timeInFull << std::endl;
+    std::cout << "Time in full: " << timeInFull << std::endl;
 
-//     newTimeInFull = timeInFull;
+    newTimeInFull = timeInFull;
 
 
-//     writeData();
+    // writeData();
     
   
 
-// }
+}
 
 
 
@@ -135,12 +135,19 @@ void LoadSaveXml::writeData(){
           xmlMadeThing->writeTo(myxmlfile, XmlElement::TextFormat());
         
 
-        //   if (newTimeInFull.isEmpty() )    {
+          if (newTimeInFull.isEmpty() )    {
 
-        //     std::cout << "New timeInFull isEmpty" << std::endl;
+            std::cout << "New timeInFull isEmpty" << std::endl;
+
+            saveDuration(newTimeInFull);
+
+          // nodeOne->setAttribute ("ID", "This is changed from writeData(),6");
+          // xmlMadeThing->writeTo(myxmlfile, XmlElement::TextFormat());
                       
 
-        // }
+        }
+
+
         // if (newTimeInFull.isNotEmpty() )    {
 
         //      std::cout << "New timeInFull isNotEmpty" << std::endl;

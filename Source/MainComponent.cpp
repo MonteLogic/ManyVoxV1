@@ -171,9 +171,9 @@ void MainComponent::openButtonClicked()
         // std::cout<< minutes <<std::endl;
         std::cout<< timeInFull <<std::endl;
 
-        // LoadSaveXml saveInfo;
+        LoadSaveXml saveInfo;
 
-        // saveInfo.saveDuration(timeInFull);
+        saveInfo.saveDuration(timeInFull);
 
         
       //  std::cout<< durationInMinutes <<std::endl;
