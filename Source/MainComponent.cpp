@@ -174,6 +174,7 @@ void MainComponent::openButtonClicked()
         LoadSaveXml saveInfo;
 
         saveInfo.saveDuration(timeInFull);
+        saveInfo.fireWriteData();
 
         
       //  std::cout<< durationInMinutes <<std::endl;

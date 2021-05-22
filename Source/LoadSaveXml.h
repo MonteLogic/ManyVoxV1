@@ -23,6 +23,7 @@ public:
 
     void saveDuration(String timeInFull);
 
+    void fireWriteData();
 
 
 private:
@@ -33,6 +34,15 @@ private:
     void loadData();
 
     void writeData();
+
+    void counterFunc();
+
+   static int counter;
+
+
+    int counterB;
+//    int counter = 0;
+
 
     // FILE * myxmlfile;
     // FILE * dir;

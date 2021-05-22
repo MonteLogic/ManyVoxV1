@@ -15,17 +15,18 @@
 LoadSaveXml::LoadSaveXml()
 {
 
+// I believe I only want loadData to be fired once. 
 
+// loadData is being fired twice. 
+
+//
 // I'm trying to run logic that makes it so that loadData doesn't run twice
 // thus changing the memory address values(?)
+    
     loadData();
 
-    
-    if (nodeOne != 0){
-   writeData();
 
-    }
-    
+    counterFunc();
 
   
 
@@ -48,14 +49,32 @@ void LoadSaveXml::saveDuration(String timeInFull){
   
 
 }
+int LoadSaveXml::counter=0;
+   
 
+void LoadSaveXml::counterFunc(){
+
+
+
+
+     counter++;
+
+     std::cout << counter << std::endl;
+
+
+
+
+}
 
 
 
 void LoadSaveXml::loadData(){
   // A preamble to queue all files. 
+       // Uncomment this out again to figure out
+       // when loadData is being called.
+       // counter+1;
+        //std::cout << counter << std::endl;
 
-  
         dir = juce::File::getCurrentWorkingDirectory();
 
         int numTries = 0;
@@ -129,7 +148,20 @@ void LoadSaveXml::loadData(){
 }
 
 
+
+void LoadSaveXml::fireWriteData(){
+
+  writeData();
+
+
+}
+
 void LoadSaveXml::writeData(){
+
+      if (nodeOne != 0){
+  
+    
+
 
           nodeOne->setAttribute ("ID", "This is changed from writeData(),6");
           xmlMadeThing->writeTo(myxmlfile, XmlElement::TextFormat());
@@ -141,20 +173,23 @@ void LoadSaveXml::writeData(){
 
             saveDuration(newTimeInFull);
 
-          // nodeOne->setAttribute ("ID", "This is changed from writeData(),6");
-          // xmlMadeThing->writeTo(myxmlfile, XmlElement::TextFormat());
+          nodeOne->setAttribute ("ID", newTimeInFull);
+          xmlMadeThing->writeTo(myxmlfile, XmlElement::TextFormat());
                       
 
         }
 
 
-        // if (newTimeInFull.isNotEmpty() )    {
+        if (newTimeInFull.isNotEmpty() )    {
 
-        //      std::cout << "New timeInFull isNotEmpty" << std::endl;
-        //   // The below lines uncommented produce a segmentation fault. 
-        //    nodeOne->setAttribute ("ID", newTimeInFull);
-        //   xmlMadeThing->writeTo(myxmlfile, XmlElement::TextFormat());
-        // }
+             std::cout << "New timeInFull isNotEmpty" << std::endl;
+          // The below lines uncommented produce a segmentation fault. 
+           nodeOne->setAttribute ("ID", newTimeInFull);
+          xmlMadeThing->writeTo(myxmlfile, XmlElement::TextFormat());
+        }
  
+
+     }
+
 
 }
