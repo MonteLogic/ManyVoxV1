@@ -39,8 +39,8 @@ private:
 
    static int counter;
 
-
-    int counterB;
+   
+   static int counterB;
 //    int counter = 0;
 
 

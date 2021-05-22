@@ -23,8 +23,14 @@ LoadSaveXml::LoadSaveXml()
 // I'm trying to run logic that makes it so that loadData doesn't run twice
 // thus changing the memory address values(?)
     
+
+// What should counterB or counter equal?
+    if (counterB ==0) {
+
     loadData();
 
+
+    }
 
     counterFunc();
 
@@ -67,13 +73,13 @@ void LoadSaveXml::counterFunc(){
 }
 
 
-
+int LoadSaveXml::counterB=0;
 void LoadSaveXml::loadData(){
   // A preamble to queue all files. 
        // Uncomment this out again to figure out
        // when loadData is being called.
-       // counter+1;
-        //std::cout << counter << std::endl;
+       counterB++;
+        std::cout << "counterB: " << counter << std::endl;
 
         dir = juce::File::getCurrentWorkingDirectory();
 
@@ -127,7 +133,7 @@ void LoadSaveXml::loadData(){
               std::cout << newTimeInFull << std::endl;
           //    writeData();
 
-
+              // This writing logic should only be set outside of the loadData function.
               nodeThree->setAttribute ("ID", "Changed6");
               xmlMadeThing->writeTo(myxmlfile, XmlElement::TextFormat());
 
@@ -143,6 +149,9 @@ void LoadSaveXml::loadData(){
             Logger::outputDebugString("Non-Existent");
 
         }
+
+         std::cout << "loadData has been fired: " << counterB << " times" << std::endl;
+
 
 
 }
