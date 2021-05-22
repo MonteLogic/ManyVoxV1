@@ -28,6 +28,7 @@ LoadSaveXml::LoadSaveXml()
     if (counterB ==0) {
 
     loadData();
+    writeData();
 
 
     }
@@ -167,14 +168,7 @@ void LoadSaveXml::fireWriteData(){
 
 void LoadSaveXml::writeData(){
 
-      if (nodeOne != 0){
-  
-    
-
-
-          nodeOne->setAttribute ("ID", "This is changed from writeData(),6");
-          xmlMadeThing->writeTo(myxmlfile, XmlElement::TextFormat());
-        
+         
 
           if (newTimeInFull.isEmpty() )    {
 
@@ -192,13 +186,92 @@ void LoadSaveXml::writeData(){
         if (newTimeInFull.isNotEmpty() )    {
 
              std::cout << "New timeInFull isNotEmpty" << std::endl;
-          // The below lines uncommented produce a segmentation fault. 
-           nodeOne->setAttribute ("ID", newTimeInFull);
-          xmlMadeThing->writeTo(myxmlfile, XmlElement::TextFormat());
+
+
+          //====================================================
+
+
+
+     auto dir = juce::File::getCurrentWorkingDirectory();
+
+        int numTries = 0;
+
+        while (! dir.getChildFile ("Resources").exists() && numTries++ < 15)
+            dir = dir.getParentDirectory();
+
+        auto tableFile = dir.getChildFile ("Resources").getChildFile ("AudioFileData.xml");
+
+        if (tableFile.exists()) {
+
+           // Logger::outputDebugString(outputNameofFile);
+
+             std::cout << "Existent" << std::endl;
+  
+          //   xmlMadeThing = juce::XmlDocument::parse(myxmlfile);
+
+     
+          // //   if (xmlMadeThing->hasTagName("PATHS"))
+          // //   {
+          // //       // Checking to see if the file exist and is reading the tags.
+          // //       Logger::outputDebugString("Statement 6, The xml file does have that tag name.");
+
+
+          // //       // Reading the xml string. 
+
+          // //       nodeOne = xmlMadeThing->getFirstChildElement();
+          // //   std::cout << "nodeOne first reference: " << nodeOne << std::endl;
+
+          // //       printNodeOne = nodeOne->getAllSubText();
+          // //     Logger::outputDebugString(printNodeOne);
+
+
+          // //     nodeTwo = nodeOne->getNextElement();
+
+          // //      printNodeTwo = nodeTwo->getAllSubText();
+
+          // //      Logger::outputDebugString(printNodeTwo);
+
+
+          // //     nodeThree = nodeTwo->getNextElement();
+
+          // //     printNodeThree = nodeThree->getAllSubText();
+
+          
+          // //     std::cout << printNodeThree << std::endl;
+              
+          // //     std::cout << newTimeInFull << std::endl;
+          // // //    writeData();
+
+          // //     // This writing logic should only be set outside of the loadData function.
+          // //     nodeThree->setAttribute ("ID", newTimeInFull);
+          // //     xmlMadeThing->writeTo(myxmlfile, XmlElement::TextFormat());
+
+
+
+          // //   }
+
+        }
+
+        if (!myxmlfile.exists()) {
+
+            //Logger::outputDebugString(outputNameofFile);
+            Logger::outputDebugString("Non-Existent");
+
+        }
+
+   
+
+          //=====================================================
+
+
+          //  nodeOne->setAttribute ("ID", newTimeInFull);
+          // xmlMadeThing->writeTo(myxmlfile, XmlElement::TextFormat());
+
+
+
         }
  
 
-     }
-
+    
 
 }
