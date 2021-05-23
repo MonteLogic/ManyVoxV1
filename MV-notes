@@ -2,8 +2,6 @@ There saying that its getting cleaned up by other parts of the file.
 
 So I'm going to create a new file where I only write. 
 
+Look at the file paths the first one shows wheres its actually at, the other ones are relative. 
 
-I think that public AudioAppComponent or maybe public ChangeListener
-has something to do with it                        
-                        
-                        Because it has been counted how many times loadData has been ran, however th tree values are only shown once(?)
+So its a matter of hashing out the right parent files. 
