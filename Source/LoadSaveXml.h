@@ -24,6 +24,7 @@ public:
     void saveDuration(String timeInFull);
 
     void writeData();
+    void loadData();
 
 
 
@@ -32,14 +33,17 @@ private:
    String newString = "YeahYeah";
 
     //void saveData();
-    void loadData();
 
 
+    // void counterFunc();
 
+   static int counter;
 
    
-   static int counterB;
+    static int counterB;
+//    int counter = 0;
 
+    int numTries=0;
 
 
     // FILE * myxmlfile;

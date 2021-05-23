@@ -25,14 +25,15 @@ LoadSaveXml::LoadSaveXml()
     
 
 // What should counterB or counter equal?
-    if (counterB ==0) {
+
 
     loadData();
-    writeData();
+    // writeData();
 
 
-    }
+    
 
+    // counterFunc();
 
   
 
@@ -68,7 +69,7 @@ void LoadSaveXml::loadData(){
 
         dir = juce::File::getCurrentWorkingDirectory();
 
-        int numTries = 0;
+        ///numTries = 0;
 
         while (! dir.getChildFile ("Resources").exists() && numTries++ < 15)
             dir = dir.getParentDirectory();
@@ -76,13 +77,14 @@ void LoadSaveXml::loadData(){
         myxmlfile = dir.getChildFile ("Resources").getChildFile ("FilePaths.xml");
 
         auto outputNameofFile = myxmlfile.getFullPathName();
-
+        numTries = 0;
 
         if (myxmlfile.exists()) {
 
             Logger::outputDebugString(outputNameofFile);
-            Logger::outputDebugString("Existent");
-  
+
+            std::cout << "myxmlfile.exists() "<< std::endl;
+
             xmlMadeThing = juce::XmlDocument::parse(myxmlfile);
 
      
@@ -131,7 +133,7 @@ void LoadSaveXml::loadData(){
         if (!myxmlfile.exists()) {
 
             Logger::outputDebugString(outputNameofFile);
-            Logger::outputDebugString("Non-Existent");
+            Logger::outputDebugString("Non-Existent , !myxmlfile.exists()");
 
         }
 
@@ -151,10 +153,10 @@ void LoadSaveXml::writeData(){
 
             std::cout << "New timeInFull isEmpty" << std::endl;
 
-          //   saveDuration(newTimeInFull);
+            saveDuration(newTimeInFull);
 
-          // nodeOne->setAttribute ("ID", newTimeInFull);
-          // xmlMadeThing->writeTo(myxmlfile, XmlElement::TextFormat());
+          nodeOne->setAttribute ("ID", newTimeInFull);
+          xmlMadeThing->writeTo(myxmlfile, XmlElement::TextFormat());
                       
 
         }
@@ -176,13 +178,13 @@ void LoadSaveXml::writeData(){
         while (! dir.getChildFile ("Resources").exists() && numTries++ < 15)
             dir = dir.getParentDirectory();
 
-        auto tableFile = dir.getChildFile ("Resources").getChildFile ("FilePaths.xml");
+        auto tableFile = dir.getChildFile ("Resources").getChildFile ("AudioFileData.xml");
 
         if (tableFile.exists()) {
 
            // Logger::outputDebugString(outputNameofFile);
 
-             std::cout << "Existent" << std::endl;
+             std::cout << "tableFile.exists()" << std::endl;
   
           //   xmlMadeThing = juce::XmlDocument::parse(myxmlfile);
 
@@ -229,14 +231,14 @@ void LoadSaveXml::writeData(){
 
         }
 
-        if (!tableFile.exists()) {
+        if (!myxmlfile.exists()) {
 
             //Logger::outputDebugString(outputNameofFile);
-            Logger::outputDebugString("Non-Existent");
+            Logger::outputDebugString("!myxmlfile.exists()");
 
         }
 
-   
+
 
           //=====================================================
 
@@ -247,8 +249,6 @@ void LoadSaveXml::writeData(){
 
 
         }
- 
-
     
 
 }

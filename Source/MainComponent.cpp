@@ -174,6 +174,7 @@ void MainComponent::openButtonClicked()
         LoadSaveXml saveInfo;
 
         saveInfo.saveDuration(timeInFull);
+        saveInfo.loadData();
         saveInfo.writeData();
 
         
