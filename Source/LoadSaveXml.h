@@ -23,7 +23,8 @@ public:
 
     void saveDuration(String timeInFull);
 
-    void fireWriteData();
+    void writeData();
+
 
 
 private:
@@ -33,7 +34,6 @@ private:
     //void saveData();
     void loadData();
 
-    void writeData();
 
     void counterFunc();
 
@@ -52,10 +52,10 @@ private:
 
 
       // getFirstChildElement
-       juce::XmlElement* nodeOne = nullptr;
-       juce::XmlElement* nodeTwo = nullptr;
-       juce::XmlElement* nodeThree = nullptr;
-       juce::XmlElement* nodeFour = nullptr;
+       juce::XmlElement* nodeOne;
+       juce::XmlElement* nodeTwo;
+       juce::XmlElement* nodeThree;
+       juce::XmlElement* nodeFour;
 //statement
 
     

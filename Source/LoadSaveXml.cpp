@@ -56,22 +56,7 @@ void LoadSaveXml::saveDuration(String timeInFull){
   
 
 }
-int LoadSaveXml::counter=0;
-   
 
-void LoadSaveXml::counterFunc(){
-
-
-
-
-     counter++;
-
-     std::cout << counter << std::endl;
-
-
-
-
-}
 
 
 int LoadSaveXml::counterB=0;
@@ -158,13 +143,6 @@ void LoadSaveXml::loadData(){
 }
 
 
-
-void LoadSaveXml::fireWriteData(){
-
-  writeData();
-
-
-}
 
 void LoadSaveXml::writeData(){
 
