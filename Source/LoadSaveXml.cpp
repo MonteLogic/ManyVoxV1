@@ -33,7 +33,6 @@ LoadSaveXml::LoadSaveXml()
 
     }
 
-    counterFunc();
 
   
 
@@ -65,7 +64,7 @@ void LoadSaveXml::loadData(){
        // Uncomment this out again to figure out
        // when loadData is being called.
        counterB++;
-        std::cout << "counterB: " << counter << std::endl;
+        std::cout << "counterB: " << counterB << std::endl;
 
         dir = juce::File::getCurrentWorkingDirectory();
 
@@ -152,10 +151,10 @@ void LoadSaveXml::writeData(){
 
             std::cout << "New timeInFull isEmpty" << std::endl;
 
-            saveDuration(newTimeInFull);
+          //   saveDuration(newTimeInFull);
 
-          nodeOne->setAttribute ("ID", newTimeInFull);
-          xmlMadeThing->writeTo(myxmlfile, XmlElement::TextFormat());
+          // nodeOne->setAttribute ("ID", newTimeInFull);
+          // xmlMadeThing->writeTo(myxmlfile, XmlElement::TextFormat());
                       
 
         }
@@ -177,7 +176,7 @@ void LoadSaveXml::writeData(){
         while (! dir.getChildFile ("Resources").exists() && numTries++ < 15)
             dir = dir.getParentDirectory();
 
-        auto tableFile = dir.getChildFile ("Resources").getChildFile ("AudioFileData.xml");
+        auto tableFile = dir.getChildFile ("Resources").getChildFile ("FilePaths.xml");
 
         if (tableFile.exists()) {
 
@@ -230,7 +229,7 @@ void LoadSaveXml::writeData(){
 
         }
 
-        if (!myxmlfile.exists()) {
+        if (!tableFile.exists()) {
 
             //Logger::outputDebugString(outputNameofFile);
             Logger::outputDebugString("Non-Existent");

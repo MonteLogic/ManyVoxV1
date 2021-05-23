@@ -35,13 +35,11 @@ private:
     void loadData();
 
 
-    void counterFunc();
 
-   static int counter;
 
    
    static int counterB;
-//    int counter = 0;
+
 
 
     // FILE * myxmlfile;
