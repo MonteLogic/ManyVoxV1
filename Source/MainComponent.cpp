@@ -57,8 +57,8 @@ openWindow3Button("Post-Assessed")
     credits.onClick = [this] { toggleButtonOff (); };
     
 
-    std::cout << "This is coming from the MainComponent.cpp file and reading from LoadSaveXml" 
-              << x1.printNodeOne;
+    std::cout << "This is coming from the MainComponent.cpp file and reading from LoadSaveXml " 
+              << x1.printNodeOne << std::endl;
 
     listXmlValues.setButtonText(x1.printNodeOne);
   

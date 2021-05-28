@@ -15,25 +15,8 @@
 LoadSaveXml::LoadSaveXml()
 {
 
-// I believe I only want loadData to be fired once. 
-
-// loadData is being fired twice. 
-
-//
-// I'm trying to run logic that makes it so that loadData doesn't run twice
-// thus changing the memory address values(?)
-    
-
-// What should counterB or counter equal?
-
 
     loadData();
-    // writeData();
-
-
-    
-
-    // counterFunc();
 
   
 
@@ -50,10 +33,6 @@ void LoadSaveXml::saveDuration(String timeInFull){
 
     newTimeInFull = timeInFull;
 
-
-    // writeData();
-    
-  
 
 }
 
@@ -74,7 +53,7 @@ void LoadSaveXml::loadData(){
         while (! dir.getChildFile ("Resources").exists() && numTries++ < 15)
             dir = dir.getParentDirectory();
 
-//        std::cout << dir << std::endl;
+
 
         myxmlfile = dir.getChildFile ("Resources").getChildFile ("FilePaths.xml");
 
@@ -90,7 +69,7 @@ void LoadSaveXml::loadData(){
             xmlMadeThing = juce::XmlDocument::parse(myxmlfile);
 
      
-            if (xmlMadeThing->hasTagName("PATHS"))
+            if (xmlMadeThing->hasTagName("NODES"))
             {
                 // Checking to see if the file exist and is reading the tags.
                 // What if I get relative path from and save it? 
@@ -121,15 +100,7 @@ void LoadSaveXml::loadData(){
               std::cout << printNodeThree << std::endl;
               
               std::cout << newTimeInFull << std::endl;
-          //    writeData();
 
-
-
-            if (newTimeInFull.isNotEmpty() )    {
-
-             std::cout << "New timeInFull isNotEmpty" << std::endl;
-
-            }
     
           }
 
@@ -151,7 +122,7 @@ void LoadSaveXml::loadData(){
 void LoadSaveXml::writeData(){
 
               std::cout << "writeData() pre" << std::endl;  
-
+              // I still need to replace the below line with a better file path.
               auto directDir = juce::File("/home/deck/Documents/ManyVoxV1-e5ad740841934c1522db7b637c4ef5d6e598760e/Resources/FilePaths.xml");
 
               std::cout << "writeData()" << std::endl;  
@@ -176,7 +147,7 @@ void LoadSaveXml::writeData(){
  
                   std::cout << "About to set Attribute" << std::endl;  
                   
-                  nodeOne->setAttribute ("ID", newTimeInFull);
+                  nodeOne->setAttribute ("DURATION", newTimeInFull);
                   std::cout << "About to write" << std::endl;  
                   xmlMadeThing->writeTo(directDir, XmlElement::TextFormat());
             }
