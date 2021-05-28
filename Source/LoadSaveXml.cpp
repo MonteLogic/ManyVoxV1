@@ -163,15 +163,22 @@ void LoadSaveXml::writeData(){
               if(directDir.exists()){
 
                 if (directDir.hasWriteAccess()){
+
+                    xmlMadeThing = juce::XmlDocument::parse(directDir);
+
+                    nodeOne = xmlMadeThing->getFirstChildElement();
+
+                    printNodeOne = nodeOne->getAllSubText();
+
                   
                   // Lets see if nodeOne is the problem.
                  std::cout << "printNodeOne is: " << printNodeOne << std::endl;  
  
-                  //std::cout << "About to set Attribute" << std::endl;  
-                  //
-                  // nodeOne->setAttribute ("ID", newTimeInFull);
-                  // std::cout << "About to write" << std::endl;  
-                  // xmlMadeThing->writeTo(directDir, XmlElement::TextFormat());
+                  std::cout << "About to set Attribute" << std::endl;  
+                  
+                  nodeOne->setAttribute ("ID", newTimeInFull);
+                  std::cout << "About to write" << std::endl;  
+                  xmlMadeThing->writeTo(directDir, XmlElement::TextFormat());
             }
             }
           }

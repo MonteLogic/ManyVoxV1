@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <PATHS>
-  <PATH ID="">C:\Users\dc\Desktop\AudioFileOne.mp3</PATH>
+  <PATH ID="2:24">C:\Users\dc\Desktop\AudioFileOne.mp3</PATH>
   <PATH ID="PATH2">C:\Users\dc\Desktop\AudioFileTwo.mp3</PATH>
   <PATH ID="Changed6">C:\Users\dc\Desktop\AudioFileThree.mp3</PATH>
   <PATH ID="PATH4" CONTENT="C:\Users\dc\Desktop\AudioFileContent.mp3">C:\Users\dc\Desktop\AudioFileTwo.mp3</PATH>
