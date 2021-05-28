@@ -74,6 +74,8 @@ void LoadSaveXml::loadData(){
         while (! dir.getChildFile ("Resources").exists() && numTries++ < 15)
             dir = dir.getParentDirectory();
 
+//        std::cout << dir << std::endl;
+
         myxmlfile = dir.getChildFile ("Resources").getChildFile ("FilePaths.xml");
 
         auto outputNameofFile = myxmlfile.getFullPathName();
@@ -91,6 +93,7 @@ void LoadSaveXml::loadData(){
             if (xmlMadeThing->hasTagName("PATHS"))
             {
                 // Checking to see if the file exist and is reading the tags.
+                // What if I get relative path from and save it? 
                 Logger::outputDebugString("Statement 6, The xml file does have that tag name.");
 
 
@@ -120,123 +123,67 @@ void LoadSaveXml::loadData(){
               std::cout << newTimeInFull << std::endl;
           //    writeData();
 
-              // This writing logic should only be set outside of the loadData function.
-              nodeThree->setAttribute ("ID", "Changed6");
-              xmlMadeThing->writeTo(myxmlfile, XmlElement::TextFormat());
 
 
+            if (newTimeInFull.isNotEmpty() )    {
+
+             std::cout << "New timeInFull isNotEmpty" << std::endl;
 
             }
+    
+          }
 
-        }
-
-        if (!myxmlfile.exists()) {
-
-            Logger::outputDebugString(outputNameofFile);
-            Logger::outputDebugString("Non-Existent , !myxmlfile.exists()");
-
-        }
+      }
 
          std::cout << "loadData has been fired: " << counterB << " times" << std::endl;
-
-
 
 }
 
 
 
+
+
+
+
+
+
+
 void LoadSaveXml::writeData(){
 
-         
+              std::cout << "writeData() pre" << std::endl;  
 
-          if (newTimeInFull.isEmpty() )    {
+              auto directDir = juce::File("/home/deck/Documents/ManyVoxV1-e5ad740841934c1522db7b637c4ef5d6e598760e/Resources/FilePaths.xml");
 
-            std::cout << "New timeInFull isEmpty" << std::endl;
-
-            saveDuration(newTimeInFull);
-
-          nodeOne->setAttribute ("ID", newTimeInFull);
-          xmlMadeThing->writeTo(myxmlfile, XmlElement::TextFormat());
-                      
-
-        }
+              std::cout << "writeData()" << std::endl;  
+                       
 
 
-        if (newTimeInFull.isNotEmpty() )    {
+          if (newTimeInFull.isNotEmpty()){
 
-             std::cout << "New timeInFull isNotEmpty" << std::endl;
+              if(directDir.exists()){
 
-
-          //====================================================
-
-
-
-     auto dir = juce::File::getCurrentWorkingDirectory();
-
-        int numTries = 0;
-
-        while (! dir.getChildFile ("Resources").exists() && numTries++ < 15)
-            dir = dir.getParentDirectory();
-
-        auto tableFile = dir.getChildFile ("Resources").getChildFile ("AudioFileData.xml");
-
-        if (tableFile.exists()) {
-
-           // Logger::outputDebugString(outputNameofFile);
-
-             std::cout << "tableFile.exists()" << std::endl;
-  
-          //   xmlMadeThing = juce::XmlDocument::parse(myxmlfile);
-
-     
-          // //   if (xmlMadeThing->hasTagName("PATHS"))
-          // //   {
-          // //       // Checking to see if the file exist and is reading the tags.
-          // //       Logger::outputDebugString("Statement 6, The xml file does have that tag name.");
-
-
-          // //       // Reading the xml string. 
-
-          // //       nodeOne = xmlMadeThing->getFirstChildElement();
-          // //   std::cout << "nodeOne first reference: " << nodeOne << std::endl;
-
-          // //       printNodeOne = nodeOne->getAllSubText();
-          // //     Logger::outputDebugString(printNodeOne);
-
-
-          // //     nodeTwo = nodeOne->getNextElement();
-
-          // //      printNodeTwo = nodeTwo->getAllSubText();
-
-          // //      Logger::outputDebugString(printNodeTwo);
-
-
-          // //     nodeThree = nodeTwo->getNextElement();
-
-          // //     printNodeThree = nodeThree->getAllSubText();
-
+                if (directDir.hasWriteAccess()){
+                  
+                  // Lets see if nodeOne is the problem.
+                 std::cout << "printNodeOne is: " << printNodeOne << std::endl;  
+ 
+                  //std::cout << "About to set Attribute" << std::endl;  
+                  //
+                  // nodeOne->setAttribute ("ID", newTimeInFull);
+                  // std::cout << "About to write" << std::endl;  
+                  // xmlMadeThing->writeTo(directDir, XmlElement::TextFormat());
+            }
+            }
+          }
           
-          // //     std::cout << printNodeThree << std::endl;
-              
-          // //     std::cout << newTimeInFull << std::endl;
-          // // //    writeData();
-
-          // //     // This writing logic should only be set outside of the loadData function.
-          // //     nodeThree->setAttribute ("ID", newTimeInFull);
-          // //     xmlMadeThing->writeTo(myxmlfile, XmlElement::TextFormat());
 
 
+          if (newTimeInFull.isEmpty()){
 
-          // //   }
+            
+          }
 
-        }
 
-        if (!myxmlfile.exists()) {
-
-            //Logger::outputDebugString(outputNameofFile);
-            Logger::outputDebugString("!myxmlfile.exists()");
-
-        }
 
 
 
@@ -251,4 +198,3 @@ void LoadSaveXml::writeData(){
         }
     
 
-}
