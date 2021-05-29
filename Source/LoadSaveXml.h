@@ -31,9 +31,16 @@ public:
 
 private:
 
-   String newString = "YeahYeah";
 
-    //void saveData();
+    String newString = "YeahYeah";
+
+    
+   // const String outputNameofFile;
+
+    String outputNameofFile;
+
+    const String copyFile;
+
 
 
     // void counterFunc();
@@ -49,6 +56,10 @@ private:
 
     // FILE * myxmlfile;
     // FILE * dir;
+
+    juce::File myxmlfilecopy;
+    juce::File siblingFile;
+
 
     juce::File myxmlfile;
     juce::File dir;
