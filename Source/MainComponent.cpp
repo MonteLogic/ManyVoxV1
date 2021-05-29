@@ -58,9 +58,9 @@ openWindow3Button("Post-Assessed")
     
 
     std::cout << "This is coming from the MainComponent.cpp file and reading from LoadSaveXml " 
-              << x1.printNodeOne << std::endl;
+              << x1.printNodeOnePath << std::endl;
 
-    listXmlValues.setButtonText(x1.printNodeOne);
+    listXmlValues.setButtonText(x1.printNodeOnePath);
   
 
     formatManager.registerBasicFormats();
@@ -134,12 +134,14 @@ void MainComponent::openButtonClicked()
         Logger::outputDebugString("Statement three");
 
         // String ipsumString = myFile.getFileExtension();
-        String ipsumString = myFile.getFullPathName();
+        currentPath = myFile.getFullPathName();
+
+
 
        // TextButton showFilename { "File name inserted here" };
 
         thirdButton.setEnabled(false);
-        thirdButton.setButtonText(ipsumString);
+        thirdButton.setButtonText(currentPath);
 
      //   viewToView = 390;
 
@@ -175,7 +177,7 @@ void MainComponent::openButtonClicked()
 
         saveInfo.saveDuration(timeInFull);
         saveInfo.loadData();
-        saveInfo.writeData();
+        saveInfo.writeData(currentPath);
 
         
       //  std::cout<< durationInMinutes <<std::endl;

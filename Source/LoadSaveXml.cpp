@@ -78,29 +78,16 @@ void LoadSaveXml::loadData(){
 
                 // Reading the xml string. 
 
-                nodeOne = xmlMadeThing->getFirstChildElement();
-            std::cout << "nodeOne first reference: " << nodeOne << std::endl;
+              nodeOne = xmlMadeThing->getFirstChildElement();
 
-                printNodeOne = nodeOne->getAllSubText();
-              Logger::outputDebugString(printNodeOne);
+              printNodeOnePath = nodeOne->getStringAttribute("PATH");
+              std::cout << "printNodeOnePath: " << printNodeOnePath << std::endl;
 
-
-              nodeTwo = nodeOne->getNextElement();
-
-               printNodeTwo = nodeTwo->getAllSubText();
-
-               Logger::outputDebugString(printNodeTwo);
-
-
-              nodeThree = nodeTwo->getNextElement();
-
-              printNodeThree = nodeThree->getAllSubText();
-
-          
-              std::cout << printNodeThree << std::endl;
               
-              std::cout << newTimeInFull << std::endl;
+              printNodeOne = "printNodeOne";
 
+
+              std::cout << newTimeInFull << std::endl;
     
           }
 
@@ -114,12 +101,7 @@ void LoadSaveXml::loadData(){
 
 
 
-
-
-
-
-
-void LoadSaveXml::writeData(){
+void LoadSaveXml::writeData(String currentPath){
 
               std::cout << "writeData() pre" << std::endl;  
               // I still need to replace the below line with a better file path.
@@ -147,7 +129,12 @@ void LoadSaveXml::writeData(){
  
                   std::cout << "About to set Attribute" << std::endl;  
                   
+
+
                   nodeOne->setAttribute ("DURATION", newTimeInFull);
+                  nodeOne->setAttribute ("PATH", currentPath);
+
+
                   std::cout << "About to write" << std::endl;  
                   xmlMadeThing->writeTo(directDir, XmlElement::TextFormat());
             }

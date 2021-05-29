@@ -20,10 +20,11 @@ public:
     ~LoadSaveXml() override;
 
     String printNodeOne;
+    String printNodeOnePath;
 
     void saveDuration(String timeInFull);
 
-    void writeData();
+    void writeData(String currentPath);
     void loadData();
 
 

@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <NODES>
-  <NODE DURATION="1:44">C:\Users\dc\Desktop\AudioFileOne.mp3</NODE>
-  <NODE ID="PATH">C:\Users\dc\Desktop\AudioFileTwo.mp3</NODE>
-  <NODE ID="Changed6">C:\Users\dc\Desktop\AudioFileThree.mp3</NODE>
-  <NODE ID="PATH4" CONTENT="C:\Users\dc\Desktop\AudioFileContent.mp3">C:\Users\dc\Desktop\AudioFileTwo.mp3</NODE>
+  <NODE ID="Current" PATH="/home/deck/Downloads/o yea beat.wav" DURATION="2:24">C:\Users\dc\Desktop\AudioFileOne.mp3</NODE>
 </NODES>
