@@ -1,2 +1,2 @@
 
-ManyVox is an app that simplifies the job of mixing, however the current workflow is grading samples and their accurateness of pitch and ranking those vocal stems as well as indexing each part. From volume adjustment to adding plugins. The wonderfully tuned algorithms of ManyVox provide a starting template in an otherwise complicated and possibly convoluted environment. 
+ManyVox is an app that involves grading samples and their accuracy of pitch and ranking such vocal performances. This ranking inclues volume adjustment, fine granular detail and many other useful mesurement and metrics. These wonderfully tuned algorithms of provide an improved workflow and reduce the need to re-record making recording fun again. 
