@@ -27,17 +27,16 @@ LoadSaveXml::~LoadSaveXml()
 }
 
 
-void LoadSaveXml::saveDuration(String timeInFull){
 
-    std::cout << "Time in full: " << timeInFull << std::endl;
-
-    newTimeInFull = timeInFull;
-
-
-}
+// void findXmlPath(){
 
 
 
+// }
+
+
+
+// loadData will have the parameter const xmlPath 
 int LoadSaveXml::counterB=0;
 void LoadSaveXml::loadData(){
   // A preamble to queue all files. 
@@ -45,6 +44,9 @@ void LoadSaveXml::loadData(){
        // when loadData is being called.
        counterB++;
         std::cout << "counterB: " << counterB << std::endl;
+
+            if(counterB == 1){
+
 
             if(!myxmlfile.exists()){
 
@@ -68,7 +70,6 @@ void LoadSaveXml::loadData(){
 
             outputNameofFile = myxmlfile.getFullPathName();
 
-            copyFile = outputNameofFile;
             //outputNameofFile = myxmlfile.getFullPathName();
             std::cout << outputNameofFile << std::endl;
 
@@ -107,9 +108,21 @@ void LoadSaveXml::loadData(){
     
           }
 
+        }
       }
 
          std::cout << "loadData has been fired: " << counterB << " times" << std::endl;
+
+}
+
+
+
+void LoadSaveXml::saveDuration(String timeInFull){
+
+    std::cout << "Time in full: " << timeInFull << std::endl;
+
+    newTimeInFull = timeInFull;
+
 
 }
 
@@ -122,17 +135,41 @@ void LoadSaveXml::writeData(String currentPath){
 
          std::cout << outputNameofFile << std::endl;
 
+         juce::File* copyFile = &myxmlfile;
 
-              if(siblingFile.exists()){
+
+             if(copyFile->exists()){
 
               std::cout << "_" << std::endl;  
 
 
               }
 
-              if(!siblingFile.exists()){
+              if(!copyFile->exists()){
 
               std::cout << "!" << std::endl;  
+
+
+              }
+
+
+
+
+
+
+
+              if(myxmlfile.exists()){
+
+              std::cout << "_" << std::endl;  
+            std::cout << outputNameofFile << std::endl;
+
+
+              }
+
+              if(!myxmlfile.exists()){
+
+              std::cout << "!" << std::endl;  
+            std::cout << outputNameofFile << std::endl;
 
 
               }
@@ -149,7 +186,7 @@ void LoadSaveXml::writeData(String currentPath){
           //   auto directDir = juce::File::getCurrentWorkingDirectory();
 
 
-          //    auto directDirTwo = juce::File("/home/deck/Documents/ManyVoxV1-e5ad740841934c1522db7b637c4ef5d6e598760e/Resources/FilePaths.xml");
+          //    auto directDirTwo = juce::File("/home/deck/Documents/ManyVoxV1/Resources/FilePaths.xml");
              
           //     if (directDir.isDirectory()){
 
