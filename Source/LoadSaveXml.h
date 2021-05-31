@@ -27,7 +27,9 @@ public:
     void writeData(String currentPath);
     void loadData();
 
+    // juce::File returnFilePath();
 
+    String returnFilePath();
 
 private:
 
@@ -41,7 +43,9 @@ private:
 
     const String copyFile;
 
-    // void findXmlPath();
+    void findXmlPath();
+
+
 
 
 

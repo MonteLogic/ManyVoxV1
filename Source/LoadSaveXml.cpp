@@ -28,11 +28,37 @@ LoadSaveXml::~LoadSaveXml()
 
 
 
-// void findXmlPath(){
+void findXmlPath(){
+
+  // I want this to return the path but it's going to be in juce::File format
 
 
 
-// }
+}
+
+// I don't think that this is being called so that value isn't around. 
+
+String returnFilePath(){
+          
+          auto dirX = juce::File::getCurrentWorkingDirectory();
+
+          auto numTriesX =0;
+           while (! dirX.getChildFile ("Resources").exists() && numTriesX++ < 15)
+                dirX = dirX.getParentDirectory();
+
+
+          auto myxmlfileX = dirX.getChildFile ("Resources").getChildFile ("FilePaths.xml");
+
+          auto outputNameofFileX = myxmlfileX.getFullPathName();
+                            std::cout << outputNameofFileX << std::endl;
+
+          return outputNameofFileX;
+
+
+
+
+
+    };
 
 
 
@@ -47,7 +73,7 @@ void LoadSaveXml::loadData(){
 
             if(counterB == 1){
 
-
+            // This line below is really confusing. 
             if(!myxmlfile.exists()){
 
             // I think this stays because its static.
@@ -137,6 +163,11 @@ void LoadSaveXml::writeData(String currentPath){
 
          juce::File* copyFile = &myxmlfile;
 
+         auto copyReturnable = returnFilePath();
+
+         std::cout << copyReturnable << std::endl;  
+
+
 
              if(copyFile->exists()){
 
@@ -158,21 +189,21 @@ void LoadSaveXml::writeData(String currentPath){
 
 
 
-              if(myxmlfile.exists()){
+            //   if(returnFilePath().exists()){
 
-              std::cout << "_" << std::endl;  
-            std::cout << outputNameofFile << std::endl;
-
-
-              }
-
-              if(!myxmlfile.exists()){
-
-              std::cout << "!" << std::endl;  
-            std::cout << outputNameofFile << std::endl;
+            //   std::cout << "_" << std::endl;  
+            // // std::cout << outputNameofFile << std::endl;
 
 
-              }
+            //   }
+
+            //   if(!returnFilePath().exists()){
+
+            //   std::cout << "!" << std::endl;  
+            // // std::cout << outputNameofFile << std::endl;
+
+
+            //   }
 
 
               // I still need to replace the below line with a better file path.
