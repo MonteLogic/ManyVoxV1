@@ -28,31 +28,44 @@ LoadSaveXml::~LoadSaveXml()
 
 
 
-void findXmlPath(){
+// void findXmlPath(){
 
-  // I want this to return the path but it's going to be in juce::File format
+//   // I want this to return the path but it's going to be in juce::File format
 
 
 
-}
+// }
 
 // I don't think that this is being called so that value isn't around. 
 
-String returnFilePath(){
+juce::File LoadSaveXml::returnFilePath(){
           
-          auto dirX = juce::File::getCurrentWorkingDirectory();
 
-          auto numTriesX =0;
-           while (! dirX.getChildFile ("Resources").exists() && numTriesX++ < 15)
-                dirX = dirX.getParentDirectory();
+            // This line below is really confusing. 
 
 
-          auto myxmlfileX = dirX.getChildFile ("Resources").getChildFile ("FilePaths.xml");
+            // I think this stays because its static.
+            dir = juce::File::getCurrentWorkingDirectory();
 
-          auto outputNameofFileX = myxmlfileX.getFullPathName();
-                            std::cout << outputNameofFileX << std::endl;
 
-          return outputNameofFileX;
+            while (! dir.getChildFile ("Resources").exists() && numTries++ < 15)
+                dir = dir.getParentDirectory();
+
+
+            myxmlfile = dir.getChildFile ("Resources").getChildFile ("FilePaths.xml");
+
+
+            outputNameofFile = myxmlfile.getFullPathName();
+
+            if (myxmlfile.exists()){
+
+                std::cout << "myxmlfile.exists()" << std::endl;
+
+            }
+
+
+            return myxmlfile;
+
 
 
 
@@ -71,33 +84,17 @@ void LoadSaveXml::loadData(){
        counterB++;
         std::cout << "counterB: " << counterB << std::endl;
 
-            if(counterB == 1){
-
-            // This line below is really confusing. 
-            if(!myxmlfile.exists()){
-
-            // I think this stays because its static.
-            dir = juce::File::getCurrentWorkingDirectory();
-
-
-            while (! dir.getChildFile ("Resources").exists() && numTries++ < 15)
-                dir = dir.getParentDirectory();
-
-
-            myxmlfile = dir.getChildFile ("Resources").getChildFile ("FilePaths.xml");
-
-            }
 
 
 
-              if (myxmlfile.exists()) {
+              if (returnFilePath().exists()) {
 
-            std::cout << "myxmlfile.exists() "<< std::endl;
+            std::cout << "returnFilePath().exists() within loadData " << std::endl;
 
             outputNameofFile = myxmlfile.getFullPathName();
 
             //outputNameofFile = myxmlfile.getFullPathName();
-            std::cout << outputNameofFile << std::endl;
+            std::cout << "outputNameofFile = " << outputNameofFile << std::endl;
 
 
             siblingFile = myxmlfile.getSiblingFile("TableData");
@@ -135,7 +132,15 @@ void LoadSaveXml::loadData(){
           }
 
         }
-      }
+
+                      // Why is the below statement being triggered?
+                      if (!returnFilePath().exists()) {
+
+                     std::cout << "returnFilePath does not exist. " << std::endl;
+
+
+                      }
+      
 
          std::cout << "loadData has been fired: " << counterB << " times" << std::endl;
 
@@ -159,30 +164,36 @@ void LoadSaveXml::saveDuration(String timeInFull){
 void LoadSaveXml::writeData(String currentPath){
 
 
-         std::cout << outputNameofFile << std::endl;
+         auto copyIt = returnFilePath();
 
-         juce::File* copyFile = &myxmlfile;
 
-         auto copyReturnable = returnFilePath();
-
-         std::cout << copyReturnable << std::endl;  
+         auto outputNameofFileXX = returnFilePath().getFullPathName();
+         auto myxmlfileReturnPath = returnFilePath().getFullPathName();
 
 
 
-             if(copyFile->exists()){
+         std::cout << "outputNameofFileXX = " << outputNameofFileXX << std::endl;  
+         std::cout << "myxmlfileReturnPath = " << outputNameofFileXX << std::endl;  
 
-              std::cout << "_" << std::endl;  
 
+         
+              if (returnFilePath().exists()){
 
-              }
-
-              if(!copyFile->exists()){
-
-              std::cout << "!" << std::endl;  
+              std::cout <<"returnFilePath().exists() within write data "  << std::endl;  
 
 
               }
 
+              if(copyIt.exists()){
+
+              std::cout <<"returnFilePath().exists() within write data "  << std::endl;  
+
+
+              }
+
+
+
+ 
 
 
 

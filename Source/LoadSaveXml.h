@@ -27,9 +27,9 @@ public:
     void writeData(String currentPath);
     void loadData();
 
-    // juce::File returnFilePath();
+    juce::File returnFilePath();
 
-    String returnFilePath();
+//    String returnFilePath();
 
 private:
 
