@@ -39,12 +39,13 @@ private:
     
    // const String outputNameofFile;
 
-    String outputNameofFile;
+
 
     const String copyFile;
 
     void findXmlPath();
 
+    int numTries = 0;
 
 
 
@@ -55,20 +56,18 @@ private:
 
    
     static int counterB;
+    static int counterC;
 //    int counter = 0;
 
-    int numTries=0;
+
 
 
     // FILE * myxmlfile;
     // FILE * dir;
 
-    juce::File myxmlfilecopy;
-    juce::File siblingFile;
 
 
-    juce::File myxmlfile;
-    juce::File dir;
+
 
 
       // getFirstChildElement

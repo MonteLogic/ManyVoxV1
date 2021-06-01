@@ -28,34 +28,36 @@ LoadSaveXml::~LoadSaveXml()
 
 
 
-// void findXmlPath(){
 
-//   // I want this to return the path but it's going to be in juce::File format
-
-
-
-// }
-
-// I don't think that this is being called so that value isn't around. 
-
+int LoadSaveXml::counterC=0;
 juce::File LoadSaveXml::returnFilePath(){
           
 
-            // This line below is really confusing. 
+// This could change
+
+    juce::File dir = juce::File::getCurrentWorkingDirectory();
 
 
-            // I think this stays because its static.
-            dir = juce::File::getCurrentWorkingDirectory();
 
 
-            while (! dir.getChildFile ("Resources").exists() && numTries++ < 15)
-                dir = dir.getParentDirectory();
+            // This puts you in a place where you CAN access the resources folder. 
+            // This puts you in the Project folder. 
 
 
-            myxmlfile = dir.getChildFile ("Resources").getChildFile ("FilePaths.xml");
+            while (! dir.getChildFile ("Resources").exists() && numTries++ < 25){
+               dir = dir.getParentDirectory();
+            }
+            // This just puts you in the
+
+              // If the folder that its in has the name resources then do the following: 1
+
+            juce::File myxmlfile= dir.getChildFile ("Resources").getChildFile ("FilePaths.xml");
+
+//            juce::File myxmlfile= dir.getChildFile ("Resources").getChildFile ("FilePaths.xml");
 
 
-            outputNameofFile = myxmlfile.getFullPathName();
+
+            String outputNameofFile = myxmlfile.getFullPathName();
 
             if (myxmlfile.exists()){
 
@@ -64,6 +66,8 @@ juce::File LoadSaveXml::returnFilePath(){
             }
 
 
+            std::cout << numTries << std::endl;
+            
             return myxmlfile;
 
 
@@ -91,22 +95,13 @@ void LoadSaveXml::loadData(){
 
             std::cout << "returnFilePath().exists() within loadData " << std::endl;
 
-            outputNameofFile = myxmlfile.getFullPathName();
+            String outputNameofFileTwo = returnFilePath().getFullPathName();
 
             //outputNameofFile = myxmlfile.getFullPathName();
-            std::cout << "outputNameofFile = " << outputNameofFile << std::endl;
+            std::cout << "outputNameofFileTwo = " << outputNameofFileTwo << std::endl;
 
 
-            siblingFile = myxmlfile.getSiblingFile("TableData");
-
-
-                    if(!siblingFile.exists()){
-
-                        std::cout << "siblingFile does not exist to begin with" << std::endl;
-
-                    }
-
-            xmlMadeThing = juce::XmlDocument::parse(myxmlfile);
+            xmlMadeThing = juce::XmlDocument::parse(returnFilePath());
 
      
             if (xmlMadeThing->hasTagName("NODES"))
@@ -162,6 +157,10 @@ void LoadSaveXml::saveDuration(String timeInFull){
 
 
 void LoadSaveXml::writeData(String currentPath){
+
+
+         std::cout << "Statement " << std::endl;  
+         std::cout << "Statement " << std::endl;  
 
 
          auto copyIt = returnFilePath();
