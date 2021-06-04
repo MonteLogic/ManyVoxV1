@@ -8,6 +8,7 @@
 
 #include "MainComponent.h"
 #include "Window2Component.h"
+#include "LoadSaveXml.h"
 
 
 
@@ -65,7 +66,11 @@ openWindow3Button("Post-Assessed")
 
     formatManager.registerBasicFormats();
     transport.addChangeListener(this);
-    
+
+    saveInfo.returnFilePath();
+   saveInfo.loadData(x1.fileName);
+
+
     setSize (400, 700);
 }
 
@@ -173,11 +178,8 @@ void MainComponent::openButtonClicked()
         // std::cout<< minutes <<std::endl;
         std::cout<< timeInFull <<std::endl;
 
-        LoadSaveXml saveInfo;
 
         saveInfo.saveDuration(timeInFull);
-        // saveInfo.returnFilePath();
-        saveInfo.loadData();
         saveInfo.writeData(currentPath);
 
         

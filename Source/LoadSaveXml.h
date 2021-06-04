@@ -25,9 +25,12 @@ public:
     void saveDuration(String timeInFull);
 
     void writeData(String currentPath);
-    void loadData();
+    void loadData(const String& fileName);
+    String fileName;
 
     juce::File returnFilePath();
+
+    
 
 //    String returnFilePath();
 

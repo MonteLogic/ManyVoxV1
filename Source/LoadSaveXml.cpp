@@ -16,7 +16,7 @@ LoadSaveXml::LoadSaveXml()
 {
 
 
-    loadData();
+    //loadData();
 
   
 
@@ -53,11 +53,10 @@ juce::File LoadSaveXml::returnFilePath(){
 
             juce::File myxmlfile= dir.getChildFile ("Resources").getChildFile ("FilePaths.xml");
 
-//            juce::File myxmlfile= dir.getChildFile ("Resources").getChildFile ("FilePaths.xml");
+
+            fileName = myxmlfile.getFullPathName();
 
 
-
-            String outputNameofFile = myxmlfile.getFullPathName();
 
             if (myxmlfile.exists()){
 
@@ -79,9 +78,10 @@ juce::File LoadSaveXml::returnFilePath(){
 
 
 
+
 // loadData will have the parameter const xmlPath 
 int LoadSaveXml::counterB=0;
-void LoadSaveXml::loadData(){
+void LoadSaveXml::loadData(const String& fileName) {
   // A preamble to queue all files. 
        // Uncomment this out again to figure out
        // when loadData is being called.
@@ -89,7 +89,7 @@ void LoadSaveXml::loadData(){
         std::cout << "counterB: " << counterB << std::endl;
 
 
-
+            String outputNameofFileThree = fileName;
 
               if (returnFilePath().exists()) {
 
@@ -97,6 +97,7 @@ void LoadSaveXml::loadData(){
 
             String outputNameofFileTwo = returnFilePath().getFullPathName();
 
+            // String outputNameofFileThree = fileName;
             //outputNameofFile = myxmlfile.getFullPathName();
             std::cout << "outputNameofFileTwo = " << outputNameofFileTwo << std::endl;
 
