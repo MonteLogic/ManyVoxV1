@@ -43,6 +43,9 @@ juce::File LoadSaveXml::returnFilePath(){
             // This puts you in a place where you CAN access the resources folder. 
             // This puts you in the Project folder. 
 
+    
+            if (!myxmlfile.exists()){
+
 
             while (! dir.getChildFile ("Resources").exists() && numTries++ < 25){
                dir = dir.getParentDirectory();
@@ -51,16 +54,21 @@ juce::File LoadSaveXml::returnFilePath(){
 
               // If the folder that its in has the name resources then do the following: 1
 
-            juce::File myxmlfile= dir.getChildFile ("Resources").getChildFile ("FilePaths.xml");
+             myxmlfile= dir.getChildFile ("Resources").getChildFile ("FilePaths.xml");
+
+            }
 
 
-            fileName = myxmlfile.getFullPathName();
+
+
+
 
 
 
             if (myxmlfile.exists()){
 
                 std::cout << "myxmlfile.exists()" << std::endl;
+                fileName = myxmlfile.getFullPathName();                
 
             }
 
@@ -90,6 +98,15 @@ void LoadSaveXml::loadData(const String& fileName) {
 
 
             String outputNameofFileThree = fileName;
+
+            String preOutputNameofFile = returnFilePath().getFullPathName();
+            
+
+            std::cout << "preOutputNameofFile = " << preOutputNameofFile << std::endl;
+
+            std::cout << "const fileName = " << outputNameofFileThree << std::endl;
+
+
 
               if (returnFilePath().exists()) {
 

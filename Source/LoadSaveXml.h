@@ -39,6 +39,8 @@ private:
 
     String newString = "YeahYeah";
 
+    juce::File myxmlfile;
+
     
    // const String outputNameofFile;
 
