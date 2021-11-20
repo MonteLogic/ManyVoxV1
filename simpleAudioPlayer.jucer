@@ -21,6 +21,8 @@
             file="Source/TableTutorialComponent.h"/>
       <FILE id="qydq8n" name="WriteToXml.cpp" compile="1" resource="0" file="Source/WriteToXml.cpp"/>
       <FILE id="zpRrug" name="WriteToXml.h" compile="0" resource="0" file="Source/WriteToXml.h"/>
+      <FILE id="JzwZDy" name="FindKey.h" compile="0" resource="0" file="Source/FindKey.h"/>
+      <FILE id="y8ouF7" name="FindKey.cpp" compile="1" resource="0" file="Source/FindKey.cpp"/>
     </GROUP>
   </MAINGROUP>
   <EXPORTFORMATS>
