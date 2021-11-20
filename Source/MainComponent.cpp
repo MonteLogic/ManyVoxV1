@@ -9,14 +9,12 @@
 #include "MainComponent.h"
 #include "Window2Component.h"
 #include "LoadSaveXml.h"
-
-
-
+//#include "keyfinder.h"
 
 // I think below is the function declarations and its already cogniscent of the classes that exist.
 //==============================================================================
 MainComponent::MainComponent() : juce::AudioAppComponent(otherDeviceManager), state(Stopped), openButton("Open"), playButton("Play"), stopButton("Stop"), thirdButton("Current file path"),
-listXmlValues("Previous file paths1, Previous file paths2"), toggleBtn("Toggle Credit Button Visiblity"), credits("Developed by wp2mag.blogspot.com"), openWindow2Button("Pre-Assessed"), 
+listXmlValues("Previous file paths1, Previous file paths2"), toggleBtn("Toggle Credit Button Visiblity"), credits("Developed by wp2mag.blogspot.com"), openWindow2Button("Key:"), 
 openWindow3Button("Post-Assessed")
 
 {
