@@ -14,3 +14,11 @@ I want to make a function that can only read the parameter.
 
 It might be a good idea to create like an audio rating engine to do some of the functionality. 
 
+I think I need to bring back the section where the options for the audio are. 
+
+The only thing I really did was add a set of things to make logic be written onto
+a xml file. And add libkeyfinder to the source code. I also made it where 
+both mp3's and wav's can be listened to--possibly .m4a's. And I added a few buttons. 
+
+So I think I'm going to add all of that logic to AudioPlayer and then after that, 
+the noise crunch thing will be forever solved and then I can focus on instatiing objects from the libkeyfinder library. 
